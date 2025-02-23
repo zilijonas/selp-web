@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SELP - Amazing Medical Assessment App Coming Soon</title>
+  <title>SELP - Self Help | Coming Soon</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Animate.css for simple CSS animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xX2X1s0K4sx+yLLcDxB+2sEn/nl9JTyTQ0u7gKacL+CVN5k7GzXeo1wVwbYFhzBpUucM1P7S1n1P82n47RrZ2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Global Styles */
     * {
@@ -17,34 +19,50 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      color: #333;
-      background: #f4f7f6;
+      color: #eee;
+      background: #121212;
       line-height: 1.6;
     }
     a {
       text-decoration: none;
       color: inherit;
+      transition: color 0.3s, transform 0.3s;
     }
-
+    a:hover {
+      color: #00f2fe;
+      transform: scale(1.05);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
     /* Hero Section */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background: linear-gradient(135deg, #1c1c1c, #333333);
+      background-size: 200% 200%;
+      animation: moveBackground 10s ease infinite;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       text-align: center;
-      color: white;
+      color: #fff;
       padding: 0 20px;
     }
+    @keyframes moveBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     .hero h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       font-weight: 600;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     .hero p {
       font-size: 1.2em;
@@ -54,46 +72,93 @@
     .hero .cta-button {
       display: inline-block;
       padding: 15px 30px;
-      background: #fff;
-      color: #4facfe;
+      background: #00f2fe;
+      color: #121212;
       font-weight: 600;
       border-radius: 50px;
       transition: background 0.3s, transform 0.3s;
     }
     .hero .cta-button:hover {
-      background: #e0f7ff;
-      transform: scale(1.05);
+      background: #00c1d4;
+      transform: scale(1.1);
     }
-
-    /* Animated SVG Shape */
-    .animated-svg {
+    .hero .animated-svg {
       position: absolute;
-      width: 300px;
-      height: 300px;
-      opacity: 0.2;
-      animation: rotate 20s linear infinite;
+      width: 250px;
+      height: 250px;
+      opacity: 0.15;
+      animation: rotate 30s linear infinite;
     }
     @keyframes rotate {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-
     /* Content Section */
     .content {
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
     .content h2 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 20px;
-      color: #4facfe;
+      color: #00f2fe;
     }
     .content p {
       max-width: 800px;
       margin: 0 auto 30px;
       font-size: 1.1em;
+      line-height: 1.8;
     }
-
+    /* Features Section */
+    .features {
+      background: #1e1e1e;
+      padding: 60px 20px;
+      color: #ddd;
+      text-align: center;
+    }
+    .features h3 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #00f2fe;
+    }
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+    .features ul li {
+      font-size: 1.1em;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .features ul li i {
+      margin-right: 10px;
+      font-size: 1.5em;
+      transition: transform 0.3s;
+    }
+    .features ul li:hover i {
+      transform: rotate(20deg);
+    }
+    /* App Availability Section */
+    .availability {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .availability h3 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #00f2fe;
+    }
+    .availability .store-icons a {
+      margin: 0 15px;
+      font-size: 3em;
+      color: #fff;
+      transition: transform 0.3s;
+    }
+    .availability .store-icons a:hover {
+      transform: scale(1.1);
+    }
     /* Responsive Design */
     @media (max-width: 768px) {
       .hero h1 {
@@ -102,14 +167,25 @@
       .content h2 {
         font-size: 2em;
       }
+      .container {
+        padding: 0 20px;
+      }
     }
-
     /* Footer */
     footer {
-      background: #333;
-      color: #fff;
+      background: #111;
+      color: #aaa;
       text-align: center;
       padding: 20px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      font-size: 1.5em;
+      color: #aaa;
+      transition: color 0.3s;
+    }
+    footer .social a:hover {
+      color: #00f2fe;
     }
   </style>
   <!-- GSAP for advanced animations -->
@@ -124,30 +200,56 @@
       <line x1="50" y1="10" x2="50" y2="90" stroke="white" stroke-width="2"/>
       <line x1="10" y1="50" x2="90" y2="50" stroke="white" stroke-width="2"/>
     </svg>
-    <div class="hero-content">
+    <div class="hero-content container">
       <h1 class="animate__animated animate__fadeInDown">SELP</h1>
-      <p class="animate__animated animate__fadeInUp">Revolutionizing medical assessment with an immersive, interactive experience. Your journey to better health is about to begin.</p>
+      <p class="animate__animated animate__fadeInUp">
+        <strong>SELP</strong> stands for <em>Self Help</em>. Revolutionizing medical assessment with an immersive, interactive experience. Your journey to better health is about to begin.
+      </p>
       <a href="#" class="cta-button animate__animated animate__pulse animate__infinite">Coming Soon</a>
     </div>
   </section>
 
   <!-- Content Section: App Introduction -->
-  <section class="content">
+  <section class="content container">
     <h2 class="animate__animated animate__fadeInUp">A New Era in Self-Help</h2>
     <p class="animate__animated animate__fadeInUp">
-      SELP isn’t just another app – it’s a transformative approach to understanding your body. With an interactive 3D human model, you can simply touch the part where you feel discomfort and indicate your pain level.
+      With SELP, soon you'll be able to assess your injuries, health problems, pain, and more – just like real doctors. Our advanced interactive system uses a 3D human model and personalized questionnaires to deliver tailored health assessments.
     </p>
     <p class="animate__animated animate__fadeInUp">
-      Our intelligent system then curates a personalized questionnaire, guiding you through a comprehensive assessment. The power of advanced technology meets empathetic self-help, making your well-being our top priority.
-    </p>
-    <p class="animate__animated animate__fadeInUp">
-      Get ready for SELP – the future of medical self-assessment is almost here.
+      Experience a seamless integration of technology and healthcare, designed to empower you in understanding and managing your well-being.
     </p>
   </section>
 
-  <!-- Footer -->
+  <!-- Features Section -->
+  <section class="features container">
+    <h3 class="animate__animated animate__fadeInUp">Key Features</h3>
+    <ul class="animate__animated animate__fadeInUp">
+      <li><i class="fas fa-hand-pointer"></i> Touch interactive 3D human model</li>
+      <li><i class="fas fa-notes-medical"></i> Personalized health questionnaires</li>
+      <li><i class="fas fa-heartbeat"></i> Real-time injury & pain assessment</li>
+      <li><i class="fas fa-mobile-alt"></i> Coming soon on App Store & Google Play</li>
+    </ul>
+  </section>
+
+  <!-- App Availability Section -->
+  <section class="availability container">
+    <h3 class="animate__animated animate__fadeInUp">Available on Your Favorite Platforms</h3>
+    <div class="store-icons animate__animated animate__fadeInUp">
+      <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-google-play"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer with Facebook link -->
   <footer>
-    <p>&copy; 2025 SELP. All Rights Reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 SELP. All Rights Reserved.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61573430615677" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
   </footer>
 
   <!-- GSAP Animations for smooth entrance effects -->
@@ -155,6 +257,8 @@
     gsap.from(".hero-content", { duration: 1.5, y: -50, opacity: 0, ease: "power2.out" });
     gsap.from(".content h2", { duration: 1.5, y: 30, opacity: 0, delay: 0.5, ease: "power2.out" });
     gsap.from(".content p", { duration: 1.5, y: 30, opacity: 0, delay: 0.7, ease: "power2.out", stagger: 0.2 });
+    gsap.from(".features h3, .features li", { duration: 1.5, y: 30, opacity: 0, delay: 1, ease: "power2.out", stagger: 0.2 });
+    gsap.from(".availability h3, .store-icons a", { duration: 1.5, y: 30, opacity: 0, delay: 1.5, ease: "power2.out", stagger: 0.2 });
   </script>
 </body>
 </html>
