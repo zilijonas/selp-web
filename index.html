@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SELP - Self Help | Coming Soon</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Font Awesome -->
@@ -41,73 +41,96 @@
       margin: 0 auto;
       padding: 0 30px;
     }
-    /* Top Navigation (Desktop) */
-    #topNav {
+    /* Floating Icons Container (Always Visible) */
+    #floatingIcons {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: transparent;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .floating-icon {
+      position: absolute;
+      font-size: 1.5em;
+      color: rgba(255,255,255,0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    /* Top Navigation Bar (Desktop) */
+    #topNav {
+      position: fixed;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 15px;
+      gap: 30px;
+      font-weight: 300;
+      color: #eee;
+      z-index: 1100;
+      transition: transform 0.3s ease;
+      padding: 10px 20px;
+    }
+    #topNav.hidden {
+      transform: translate(-50%, -120%);
     }
     #topNav a {
-      margin: 0 20px;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #eee;
+      font-size: 1em;
       display: flex;
       align-items: center;
+      gap: 8px;
     }
     #topNav a i {
-      margin-right: 8px;
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
-    /* Mobile Burger Menu */
+    /* Mobile Burger Menu (moved to right) */
     .burger {
       display: none;
       position: fixed;
       top: 15px;
-      left: 15px;
+      right: 15px;
       font-size: 2em;
       color: #eee;
-      z-index: 1100;
+      z-index: 1200;
       cursor: pointer;
     }
-    /* Mobile Navigation Overlay */
+    /* Mobile Navigation Overlay (from top, full width) */
     #mobileNav {
-      display: none;
       position: fixed;
       top: 0;
       left: 0;
-      width: 250px;
-      height: 100%;
-      background: rgba(20,20,20,0.95);
-      padding-top: 60px;
-      z-index: 1050;
-      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(135deg, #add8e6, #00008b);
+      padding: 15px 0;
+      display: none;
+      flex-direction: row;
+      justify-content: space-around;
+      z-index: 1150;
     }
     #mobileNav.open {
       display: flex;
     }
     #mobileNav a {
-      padding: 15px 20px;
-      font-size: 1.1em;
+      font-size: 1em;
+      font-weight: 300;
       color: #eee;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
     }
     #mobileNav a i {
-      margin-right: 10px;
+      font-size: 1.1em;
     }
     /* Hero Section */
     .hero {
       position: relative;
-      padding-top: 80px; /* room for nav */
+      padding-top: 100px; /* Space for nav */
       width: 100%;
       height: 100vh;
       display: flex;
@@ -115,13 +138,14 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
+      z-index: 1;
     }
-    /* Big Stethoscope Icon as Background */
+    /* Big Stethoscope Icon as Background in Hero */
     .hero-bg-icon {
       position: absolute;
       font-size: 12em;
       color: rgba(255,255,255,0.1);
-      z-index: 1;
+      z-index: 0;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -132,77 +156,35 @@
       z-index: 2;
       animation: float 4s ease-in-out infinite;
     }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4em;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 5em;
+      font-weight: 200;
       margin-bottom: 20px;
     }
     .hero p {
       font-size: 1.4em;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 0 auto 20px;
     }
-    /* Floating Icons for Background */
-    .floating-icon {
-      position: absolute;
-      font-size: 1.5em;
-      color: rgba(255,255,255,0.15);
-      animation: float 6s ease-in-out infinite;
-    }
-    /* Additional Floating Icons (various medical symbols) */
-    /* Each icon uses inline style for placement and animation-duration */
-    
-    /* Card Style for Sections */
-    .card {
-      background: rgba(20,20,20,0.85);
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      margin: 40px auto;
-      width: 100%;
-    }
-    /* Section Animations */
-    .animate-section {
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.6s ease-out;
-    }
-    .animate-section.in-view {
-      opacity: 1;
-      transform: scale(1);
-    }
-    /* Content Section */
-    .content {
-      padding: 100px 20px;
+    /* Section Styling (Reduced spacing, modern look) */
+    section {
+      padding: 50px 20px;
       text-align: center;
     }
-    .content h2 {
-      font-size: 2.8em;
-      margin-bottom: 20px;
-      color: #00f2fe;
-    }
-    .content p {
+    .section-content {
       max-width: 800px;
-      margin: 0 auto 30px;
+      margin: 0 auto;
+    }
+    .section-content h2,
+    .section-content h3 {
+      color: #00f2fe;
+      margin-bottom: 20px;
+    }
+    .section-content p {
       font-size: 1.1em;
       line-height: 1.8;
-    }
-    /* Features Section */
-    .features {
-      padding: 80px 20px;
-      text-align: center;
-      color: #ddd;
-    }
-    .features h3 {
-      font-size: 2.2em;
       margin-bottom: 20px;
-      color: #00f2fe;
     }
     .features ul {
       list-style: none;
@@ -226,15 +208,6 @@
       color: #00f2fe;
     }
     /* Availability Section */
-    .availability {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .availability h3 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      color: #00f2fe;
-    }
     .store-icons a {
       margin: 0 15px;
       font-size: 3em;
@@ -265,20 +238,45 @@
     footer .social a:hover {
       transform: scale(1.2);
     }
+    /* Section Animation */
+    .animate-section {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.6s ease-out;
+    }
+    .animate-section.in-view {
+      opacity: 1;
+      transform: scale(1);
+    }
     /* Responsive Styles */
     @media (max-width: 768px) {
-      .burger {
-        display: block;
-      }
-      #topNav {
-        display: none;
-      }
-      /* Mobile navigation will overlay content */
+      #topNav { display: none; }
+      .burger { display: block; }
+      /* Mobile navigation occupies full width */
+      .hero { padding-top: 70px; }
     }
   </style>
 </head>
 <body>
-  <!-- Burger Icon for Mobile -->
+  <!-- Fixed Floating Icons Container -->
+  <div id="floatingIcons">
+    <i class="fas fa-file-medical floating-icon" style="top:5%; left:5%; animation-duration: 7s;"></i>
+    <i class="fas fa-house-medical floating-icon" style="top:20%; right:10%; animation-duration: 8s;"></i>
+    <i class="fas fa-notes-medical floating-icon" style="bottom:15%; left:15%; animation-duration: 6s;"></i>
+    <i class="fas fa-laptop-medical floating-icon" style="bottom:10%; right:20%; animation-duration: 9s;"></i>
+    <i class="fas fa-kit-medical floating-icon" style="top:50%; left:2%; animation-duration: 7s;"></i>
+    <i class="fas fa-suitcase-medical floating-icon" style="top:70%; right:5%; animation-duration: 8s;"></i>
+    <i class="fas fa-star-of-life floating-icon" style="top:30%; left:80%; animation-duration: 6s;"></i>
+    <i class="fas fa-x-ray floating-icon" style="bottom:20%; right:40%; animation-duration: 7s;"></i>
+    <i class="fas fa-user-nurse floating-icon" style="top:60%; left:60%; animation-duration: 8s;"></i>
+    <i class="fas fa-dumbbell floating-icon" style="bottom:5%; left:50%; animation-duration: 9s;"></i>
+    <i class="fas fa-heart floating-icon" style="top:10%; right:30%; animation-duration: 7s;"></i>
+    <i class="fas fa-person-cane floating-icon" style="bottom:30%; left:30%; animation-duration: 8s;"></i>
+    <i class="fas fa-person-running floating-icon" style="top:80%; right:20%; animation-duration: 6s;"></i>
+    <i class="fas fa-mobile-alt floating-icon" style="top:65%; right:5%; animation-duration: 7s;"></i>
+  </div>
+  
+  <!-- Burger Icon for Mobile (Right Side) -->
   <div class="burger" id="burger">
     <i class="fas fa-bars"></i>
   </div>
@@ -291,7 +289,7 @@
     <a href="#availability"><i class="fas fa-mobile-alt"></i> Availability</a>
   </nav>
   
-  <!-- Mobile Navigation Overlay -->
+  <!-- Mobile Navigation Overlay (From Top, Full Width) -->
   <nav id="mobileNav">
     <a href="#hero"><i class="fas fa-home"></i> Home</a>
     <a href="#content"><i class="fas fa-info-circle"></i> Overview</a>
@@ -309,25 +307,11 @@
       <h1>SELP</h1>
       <p><strong>SELP</strong> is short for <em>Self Help</em>. Experience the future of medical assessments and wellness at your fingertips.</p>
     </div>
-    <!-- Floating Icons for Extra Visual Flair -->
-    <i class="fas fa-file-medical floating-icon" style="top:5%; left:5%; animation-duration: 7s;"></i>
-    <i class="fas fa-house-medical floating-icon" style="top:20%; right:10%; animation-duration: 8s;"></i>
-    <i class="fas fa-notes-medical floating-icon" style="bottom:15%; left:15%; animation-duration: 6s;"></i>
-    <i class="fas fa-laptop-medical floating-icon" style="bottom:10%; right:20%; animation-duration: 9s;"></i>
-    <i class="fas fa-kit-medical floating-icon" style="top:50%; left:2%; animation-duration: 7s;"></i>
-    <i class="fas fa-suitcase-medical floating-icon" style="top:70%; right:5%; animation-duration: 8s;"></i>
-    <i class="fas fa-star-of-life floating-icon" style="top:30%; left:80%; animation-duration: 6s;"></i>
-    <i class="fas fa-x-ray floating-icon" style="bottom:20%; right:40%; animation-duration: 7s;"></i>
-    <i class="fas fa-user-nurse floating-icon" style="top:60%; left:60%; animation-duration: 8s;"></i>
-    <i class="fas fa-dumbbell floating-icon" style="bottom:5%; left:50%; animation-duration: 9s;"></i>
-    <i class="fas fa-heart floating-icon" style="top:10%; right:30%; animation-duration: 7s;"></i>
-    <i class="fas fa-person-cane floating-icon" style="bottom:30%; left:30%; animation-duration: 8s;"></i>
-    <i class="fas fa-person-running floating-icon" style="top:80%; right:20%; animation-duration: 6s;"></i>
   </section>
   
   <!-- Content Section -->
   <section class="content animate-section" id="content">
-    <div class="container card">
+    <div class="section-content">
       <h2>A New Era in Self-Help</h2>
       <p>With SELP, you'll soon be able to assess injuries, health problems, pain, and more – just like real doctors. Our advanced interactive system uses a 3D human model and personalized questionnaires to deliver tailored health assessments.</p>
       <p>Experience a seamless integration of technology and healthcare, designed to empower you in understanding and managing your well-being.</p>
@@ -336,7 +320,7 @@
   
   <!-- Features Section -->
   <section class="features animate-section" id="features">
-    <div class="container card">
+    <div class="section-content">
       <h3>Key Features</h3>
       <ul>
         <li>Touch interactive 3D human model</li>
@@ -349,7 +333,7 @@
   
   <!-- Availability Section -->
   <section class="availability animate-section" id="availability">
-    <div class="container card">
+    <div class="section-content">
       <h3>Available on Your Favorite Platforms</h3>
       <div class="store-icons">
         <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
@@ -371,44 +355,50 @@
     </div>
   </footer>
   
-  <!-- JavaScript for Mobile Menu and Section Animations -->
+  <!-- JavaScript for Mobile Menu, Nav Hide on Scroll, and Section Animations -->
   <script>
+    // Mobile Menu Toggle
     document.addEventListener("DOMContentLoaded", function() {
       const burger = document.getElementById("burger");
       const mobileNav = document.getElementById("mobileNav");
-      
-      // Toggle mobile menu on burger click
       burger.addEventListener("click", function(e) {
         e.stopPropagation();
         mobileNav.classList.toggle("open");
       });
-      
-      // Close mobile menu when clicking on a menu item
       mobileNav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", function() {
-          mobileNav.classList.remove("open");
-        });
+        link.addEventListener("click", () => mobileNav.classList.remove("open"));
       });
-      
-      // Close mobile menu when clicking outside of it
       document.addEventListener("click", function(e) {
-        if(mobileNav.classList.contains("open") && !mobileNav.contains(e.target) && e.target !== burger) {
+        if (mobileNav.classList.contains("open") && !mobileNav.contains(e.target) && e.target !== burger) {
           mobileNav.classList.remove("open");
         }
       });
       
-      // Intersection Observer for section animations
+      // Top Navigation Hide on Scroll Down and Show on Scroll Up
+      let lastScroll = window.pageYOffset;
+      const topNav = document.getElementById("topNav");
+      window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          topNav.classList.add("hidden");
+        } else {
+          topNav.classList.remove("hidden");
+        }
+        lastScroll = currentScroll;
+      });
+      
+      // Intersection Observer for Section Animations
       const sections = document.querySelectorAll(".animate-section");
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if(entry.isIntersecting){
+          if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
           }
         });
       }, { threshold: 0.2 });
       sections.forEach(section => observer.observe(section));
       
-      // GSAP for subtle floating effect of hero content
+      // GSAP for subtle floating effect on hero content (optional additional effect)
       gsap.to(".hero-content", { y: 10, repeat: -1, yoyo: true, ease: "power1.inOut", duration: 3 });
     });
   </script>
