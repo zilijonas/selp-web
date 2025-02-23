@@ -21,7 +21,6 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      /* Gradient from light blue (#add8e6) to very dark blue (#00008b) */
       background: linear-gradient(135deg, #add8e6, #00008b);
       background-attachment: fixed;
       color: #eee;
@@ -75,9 +74,10 @@
       z-index: 1100;
       transition: transform 0.3s ease;
       padding: 10px 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     #topNav.hidden {
-      transform: translate(-50%, -120%);
+      transform: translate(-50%, -150%);
     }
     #topNav a {
       font-size: 1em;
@@ -88,7 +88,7 @@
     #topNav a i {
       font-size: 1.1em;
     }
-    /* Mobile Burger Menu (moved to right) */
+    /* Mobile Burger Menu (Right Side) */
     .burger {
       display: none;
       position: fixed;
@@ -99,21 +99,25 @@
       z-index: 1200;
       cursor: pointer;
     }
-    /* Mobile Navigation Overlay (from top, full width) */
+    /* Mobile Navigation Overlay (Animated, from Top, Full Width, Column) */
     #mobileNav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: linear-gradient(135deg, #add8e6, #00008b);
+      background: linear-gradient(135deg, rgba(173,216,230,0.8), rgba(0,0,139,0.8));
       padding: 15px 0;
-      display: none;
-      flex-direction: row;
-      justify-content: space-around;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       z-index: 1150;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     }
     #mobileNav.open {
-      display: flex;
+      transform: translateY(0);
+      opacity: 1;
     }
     #mobileNav a {
       font-size: 1em;
@@ -122,7 +126,9 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 10px;
+      padding: 10px 20px;
+      width: 100%;
+      justify-content: center;
     }
     #mobileNav a i {
       font-size: 1.1em;
@@ -134,27 +140,26 @@
       width: 100%;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
       z-index: 1;
+      color: #fff;
     }
-    /* Big Stethoscope Icon as Background in Hero */
-    .hero-bg-icon {
-      position: absolute;
-      font-size: 12em;
-      color: rgba(255,255,255,0.1);
-      z-index: 0;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    /* Stethoscope Icon Above Hero Title */
+    .hero-icon {
+      font-size: 8em;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 20px;
     }
     /* Floating Hero Content (Title & Subtitle) */
     .hero-content {
       position: relative;
       z-index: 2;
       animation: float 4s ease-in-out infinite;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
@@ -166,6 +171,7 @@
       font-size: 1.4em;
       max-width: 600px;
       margin: 0 auto 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     /* Section Styling (Reduced spacing, modern look) */
     section {
@@ -180,6 +186,7 @@
     .section-content h3 {
       color: #00f2fe;
       margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     .section-content p {
       font-size: 1.1em;
@@ -261,19 +268,19 @@
   <!-- Fixed Floating Icons Container -->
   <div id="floatingIcons">
     <i class="fas fa-file-medical floating-icon" style="top:5%; left:5%; animation-duration: 7s;"></i>
-    <i class="fas fa-house-medical floating-icon" style="top:20%; right:10%; animation-duration: 8s;"></i>
-    <i class="fas fa-notes-medical floating-icon" style="bottom:15%; left:15%; animation-duration: 6s;"></i>
-    <i class="fas fa-laptop-medical floating-icon" style="bottom:10%; right:20%; animation-duration: 9s;"></i>
-    <i class="fas fa-kit-medical floating-icon" style="top:50%; left:2%; animation-duration: 7s;"></i>
-    <i class="fas fa-suitcase-medical floating-icon" style="top:70%; right:5%; animation-duration: 8s;"></i>
-    <i class="fas fa-star-of-life floating-icon" style="top:30%; left:80%; animation-duration: 6s;"></i>
-    <i class="fas fa-x-ray floating-icon" style="bottom:20%; right:40%; animation-duration: 7s;"></i>
-    <i class="fas fa-user-nurse floating-icon" style="top:60%; left:60%; animation-duration: 8s;"></i>
-    <i class="fas fa-dumbbell floating-icon" style="bottom:5%; left:50%; animation-duration: 9s;"></i>
-    <i class="fas fa-heart floating-icon" style="top:10%; right:30%; animation-duration: 7s;"></i>
-    <i class="fas fa-person-cane floating-icon" style="bottom:30%; left:30%; animation-duration: 8s;"></i>
-    <i class="fas fa-person-running floating-icon" style="top:80%; right:20%; animation-duration: 6s;"></i>
-    <i class="fas fa-mobile-alt floating-icon" style="top:65%; right:5%; animation-duration: 7s;"></i>
+    <i class="fas fa-house-medical floating-icon" style="top:10%; left:25%; animation-duration: 8s;"></i>
+    <i class="fas fa-notes-medical floating-icon" style="top:20%; left:45%; animation-duration: 6s;"></i>
+    <i class="fas fa-laptop-medical floating-icon" style="top:30%; left:65%; animation-duration: 9s;"></i>
+    <i class="fas fa-kit-medical floating-icon" style="top:40%; left:15%; animation-duration: 7s;"></i>
+    <i class="fas fa-suitcase-medical floating-icon" style="top:50%; left:80%; animation-duration: 8s;"></i>
+    <i class="fas fa-star-of-life floating-icon" style="top:60%; left:35%; animation-duration: 6s;"></i>
+    <i class="fas fa-x-ray floating-icon" style="top:70%; left:55%; animation-duration: 7s;"></i>
+    <i class="fas fa-user-nurse floating-icon" style="top:80%; left:20%; animation-duration: 8s;"></i>
+    <i class="fas fa-dumbbell floating-icon" style="top:85%; left:75%; animation-duration: 9s;"></i>
+    <i class="fas fa-heart floating-icon" style="top:90%; left:50%; animation-duration: 7s;"></i>
+    <i class="fas fa-person-cane floating-icon" style="top:95%; left:10%; animation-duration: 8s;"></i>
+    <i class="fas fa-person-running floating-icon" style="top:5%; left:80%; animation-duration: 6s;"></i>
+    <i class="fas fa-mobile-alt floating-icon" style="top:15%; left:90%; animation-duration: 7s;"></i>
   </div>
   
   <!-- Burger Icon for Mobile (Right Side) -->
@@ -289,7 +296,7 @@
     <a href="#availability"><i class="fas fa-mobile-alt"></i> Availability</a>
   </nav>
   
-  <!-- Mobile Navigation Overlay (From Top, Full Width) -->
+  <!-- Mobile Navigation Overlay (Animated, Column Layout) -->
   <nav id="mobileNav">
     <a href="#hero"><i class="fas fa-home"></i> Home</a>
     <a href="#content"><i class="fas fa-info-circle"></i> Overview</a>
@@ -299,8 +306,8 @@
   
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <!-- Big Stethoscope Icon as Background -->
-    <div class="hero-bg-icon">
+    <!-- Stethoscope Icon Above Hero Title -->
+    <div class="hero-icon">
       <i class="fas fa-stethoscope"></i>
     </div>
     <div class="hero-content container">
@@ -357,8 +364,8 @@
   
   <!-- JavaScript for Mobile Menu, Nav Hide on Scroll, and Section Animations -->
   <script>
-    // Mobile Menu Toggle
     document.addEventListener("DOMContentLoaded", function() {
+      // Mobile Menu Toggle with Animation
       const burger = document.getElementById("burger");
       const mobileNav = document.getElementById("mobileNav");
       burger.addEventListener("click", function(e) {
@@ -398,7 +405,7 @@
       }, { threshold: 0.2 });
       sections.forEach(section => observer.observe(section));
       
-      // GSAP for subtle floating effect on hero content (optional additional effect)
+      // GSAP for subtle floating effect on hero content
       gsap.to(".hero-content", { y: 10, repeat: -1, yoyo: true, ease: "power1.inOut", duration: 3 });
     });
   </script>
