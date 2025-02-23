@@ -61,6 +61,7 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0px); }
     }
+    /* Add Stethoscope icon to floating icons (moved here) */
     /* Top Navigation Bar (Desktop) */
     #topNav {
       position: fixed;
@@ -70,7 +71,8 @@
       display: flex;
       gap: 30px;
       font-weight: 300;
-      color: #eee;
+      /* Initially light blue */
+      color: #add8e6;
       z-index: 1100;
       transition: transform 0.3s ease;
       padding: 10px 20px;
@@ -84,6 +86,8 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      /* Light blue menu items */
+      color: #add8e6;
     }
     #topNav a i {
       font-size: 1.1em;
@@ -95,7 +99,7 @@
       top: 15px;
       right: 15px;
       font-size: 2em;
-      color: #eee;
+      color: #add8e6;
       z-index: 1200;
       cursor: pointer;
     }
@@ -122,7 +126,7 @@
     #mobileNav a {
       font-size: 1em;
       font-weight: 300;
-      color: #eee;
+      color: #add8e6;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -148,18 +152,18 @@
       z-index: 1;
       color: #fff;
     }
-    /* Stethoscope Icon Above Hero Title */
-    .hero-icon {
-      font-size: 8em;
-      color: rgba(255,255,255,0.2);
-      margin-bottom: 20px;
-    }
+    /* Remove stethoscope from hero; now added in floating icons */
     /* Floating Hero Content (Title & Subtitle) */
     .hero-content {
       position: relative;
       z-index: 2;
-      animation: float 4s ease-in-out infinite;
+      animation: float-hero 4s ease-in-out infinite;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    @keyframes float-hero {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0px); }
     }
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
@@ -171,7 +175,6 @@
       font-size: 1.4em;
       max-width: 600px;
       margin: 0 auto 20px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     /* Section Styling (Reduced spacing, modern look) */
     section {
@@ -181,11 +184,14 @@
     .section-content {
       max-width: 800px;
       margin: 0 auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     .section-content h2,
     .section-content h3 {
       color: #00f2fe;
       margin-bottom: 20px;
+      font-size: 3em;
+      font-weight: 200;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     .section-content p {
@@ -267,6 +273,7 @@
 <body>
   <!-- Fixed Floating Icons Container -->
   <div id="floatingIcons">
+    <i class="fas fa-stethoscope floating-icon" style="top:15%; left:10%; animation-duration: 7s;"></i>
     <i class="fas fa-file-medical floating-icon" style="top:5%; left:5%; animation-duration: 7s;"></i>
     <i class="fas fa-house-medical floating-icon" style="top:10%; left:25%; animation-duration: 8s;"></i>
     <i class="fas fa-notes-medical floating-icon" style="top:20%; left:45%; animation-duration: 6s;"></i>
@@ -306,10 +313,6 @@
   
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <!-- Stethoscope Icon Above Hero Title -->
-    <div class="hero-icon">
-      <i class="fas fa-stethoscope"></i>
-    </div>
     <div class="hero-content container">
       <h1>SELP</h1>
       <p><strong>SELP</strong> is short for <em>Self Help</em>. Experience the future of medical assessments and wellness at your fingertips.</p>
@@ -343,8 +346,8 @@
     <div class="section-content">
       <h3>Available on Your Favorite Platforms</h3>
       <div class="store-icons">
-        <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-google-play"></i></a>
+        <a href="https://www.apple.com/app-store/" target="_blank"><i class="fab fa-apple"></i></a>
+        <a href="https://play.google.com/store" target="_blank"><i class="fab fa-google-play"></i></a>
       </div>
     </div>
   </section>
@@ -406,7 +409,7 @@
       sections.forEach(section => observer.observe(section));
       
       // GSAP for subtle floating effect on hero content
-      gsap.to(".hero-content", { y: 10, repeat: -1, yoyo: true, ease: "power1.inOut", duration: 3 });
+      gsap.to(".hero-content", { y: 5, repeat: -1, yoyo: true, ease: "power1.inOut", duration: 3 });
     });
   </script>
   <!-- GSAP Library -->
