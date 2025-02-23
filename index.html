@@ -9,7 +9,7 @@
   <!-- Animate.css for simple CSS animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xX2X1s0K4sx+yLLcDxB+2sEn/nl9JTyTQ0u7gKacL+CVN5k7GzXeo1wVwbYFhzBpUucM1P7S1n1P82n47RrZ2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
   <style>
     /* Global Styles */
     * {
@@ -19,8 +19,8 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      color: #eee;
       background: #121212;
+      color: #eee;
       line-height: 1.6;
     }
     a {
@@ -37,12 +37,33 @@
       margin: 0 auto;
       padding: 0 30px;
     }
+    /* Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(20, 20, 20, 0.85);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      margin: 0 15px;
+      font-weight: 600;
+      color: #eee;
+    }
     /* Hero Section */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
-      background: linear-gradient(135deg, #1c1c1c, #333333);
+      background: linear-gradient(135deg, #1c3b70, #13294b);
       background-size: 200% 200%;
       animation: moveBackground 10s ease infinite;
       display: flex;
@@ -50,7 +71,6 @@
       justify-content: center;
       overflow: hidden;
       text-align: center;
-      color: #fff;
       padding: 0 20px;
     }
     @keyframes moveBackground {
@@ -62,27 +82,27 @@
       font-size: 3.5em;
       font-weight: 600;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
     .hero p {
       font-size: 1.2em;
       max-width: 600px;
       margin: 0 auto 30px;
     }
-    .hero .cta-button {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #00f2fe;
-      color: #121212;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: background 0.3s, transform 0.3s;
+    /* Floating Medical Icons */
+    .floating-icon {
+      position: absolute;
+      font-size: 2em;
+      color: rgba(255,255,255,0.2);
+      animation: float 6s ease-in-out infinite;
     }
-    .hero .cta-button:hover {
-      background: #00c1d4;
-      transform: scale(1.1);
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
     }
-    .hero .animated-svg {
+    /* Animated SVG Shape in Hero */
+    .animated-svg {
       position: absolute;
       width: 250px;
       height: 250px;
@@ -93,9 +113,19 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
+    /* Section Animations */
+    .animate-section {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.6s ease-out;
+    }
+    .animate-section.in-view {
+      opacity: 1;
+      transform: scale(1);
+    }
     /* Content Section */
     .content {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
     .content h2 {
@@ -112,9 +142,9 @@
     /* Features Section */
     .features {
       background: #1e1e1e;
-      padding: 60px 20px;
-      color: #ddd;
+      padding: 80px 20px;
       text-align: center;
+      color: #ddd;
     }
     .features h3 {
       font-size: 2.2em;
@@ -124,25 +154,28 @@
     .features ul {
       list-style: none;
       padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
     }
     .features ul li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 15px;
       font-size: 1.1em;
-      margin: 10px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .features ul li i {
-      margin-right: 10px;
-      font-size: 1.5em;
-      transition: transform 0.3s;
+    .features ul li::before {
+      content: "\f00c";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #00f2fe;
     }
-    .features ul li:hover i {
-      transform: rotate(20deg);
-    }
-    /* App Availability Section */
+    /* Availability Section */
     .availability {
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
     .availability h3 {
@@ -150,42 +183,51 @@
       margin-bottom: 20px;
       color: #00f2fe;
     }
-    .availability .store-icons a {
+    .store-icons a {
       margin: 0 15px;
       font-size: 3em;
       color: #fff;
-      transition: transform 0.3s;
+      display: inline-block;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .availability .store-icons a:hover {
+    .store-icons a:hover {
       transform: scale(1.1);
-    }
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5em;
-      }
-      .content h2 {
-        font-size: 2em;
-      }
-      .container {
-        padding: 0 20px;
-      }
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
     /* Footer */
     footer {
       background: #111;
       color: #aaa;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+    }
+    footer .social {
+      margin-top: 15px;
     }
     footer .social a {
       margin: 0 10px;
-      font-size: 1.5em;
-      color: #aaa;
-      transition: color 0.3s;
+      font-size: 2em;
+      color: #00f2fe;
+      transition: transform 0.3s;
     }
     footer .social a:hover {
-      color: #00f2fe;
+      transform: scale(1.2);
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      .content h2, .features h3, .availability h3 {
+        font-size: 2em;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .navbar a {
+        margin: 0 10px;
+        font-size: 0.9em;
+      }
     }
   </style>
   <!-- GSAP for advanced animations -->
@@ -193,54 +235,74 @@
 </head>
 <body>
 
-  <!-- Hero Section with animated SVG and call-to-action -->
-  <section class="hero">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#hero">Home</a>
+      <a href="#content">Overview</a>
+      <a href="#features">Features</a>
+      <a href="#availability">Availability</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with animated SVG, floating icons, and call-to-action title -->
+  <section class="hero" id="hero">
+    <!-- Floating Medical Icons -->
+    <i class="fas fa-stethoscope floating-icon" style="top:10%; left:15%; animation-duration: 7s;"></i>
+    <i class="fas fa-heartbeat floating-icon" style="top:40%; right:10%; animation-duration: 8s;"></i>
+    <i class="fas fa-user-md floating-icon" style="bottom:15%; left:20%; animation-duration: 6s;"></i>
+    <!-- Animated SVG Shape -->
     <svg class="animated-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="40" stroke="white" stroke-width="2"/>
       <line x1="50" y1="10" x2="50" y2="90" stroke="white" stroke-width="2"/>
       <line x1="10" y1="50" x2="90" y2="50" stroke="white" stroke-width="2"/>
     </svg>
     <div class="hero-content container">
-      <h1 class="animate__animated animate__fadeInDown">SELP</h1>
-      <p class="animate__animated animate__fadeInUp">
-        <strong>SELP</strong> stands for <em>Self Help</em>. Revolutionizing medical assessment with an immersive, interactive experience. Your journey to better health is about to begin.
+      <h1 class="animate__animated">SELP</h1>
+      <p class="animate__animated">
+        <strong>SELP</strong> is short for <em>Self Help</em> – revolutionizing medical assessments with an immersive, interactive experience.
       </p>
-      <a href="#" class="cta-button animate__animated animate__pulse animate__infinite">Coming Soon</a>
     </div>
   </section>
 
   <!-- Content Section: App Introduction -->
-  <section class="content container">
-    <h2 class="animate__animated animate__fadeInUp">A New Era in Self-Help</h2>
-    <p class="animate__animated animate__fadeInUp">
-      With SELP, soon you'll be able to assess your injuries, health problems, pain, and more – just like real doctors. Our advanced interactive system uses a 3D human model and personalized questionnaires to deliver tailored health assessments.
-    </p>
-    <p class="animate__animated animate__fadeInUp">
-      Experience a seamless integration of technology and healthcare, designed to empower you in understanding and managing your well-being.
-    </p>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features container">
-    <h3 class="animate__animated animate__fadeInUp">Key Features</h3>
-    <ul class="animate__animated animate__fadeInUp">
-      <li><i class="fas fa-hand-pointer"></i> Touch interactive 3D human model</li>
-      <li><i class="fas fa-notes-medical"></i> Personalized health questionnaires</li>
-      <li><i class="fas fa-heartbeat"></i> Real-time injury & pain assessment</li>
-      <li><i class="fas fa-mobile-alt"></i> Coming soon on App Store & Google Play</li>
-    </ul>
-  </section>
-
-  <!-- App Availability Section -->
-  <section class="availability container">
-    <h3 class="animate__animated animate__fadeInUp">Available on Your Favorite Platforms</h3>
-    <div class="store-icons animate__animated animate__fadeInUp">
-      <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-google-play"></i></a>
+  <section class="content animate-section" id="content">
+    <div class="container">
+      <h2>A New Era in Self-Help</h2>
+      <p>
+        With SELP, you’ll soon be able to assess injuries, health problems, pain, and more – just like real doctors. Our advanced interactive system uses a 3D human model and personalized questionnaires to deliver tailored health assessments.
+      </p>
+      <p>
+        Experience a seamless integration of technology and healthcare, designed to empower you in understanding and managing your well-being.
+      </p>
     </div>
   </section>
 
-  <!-- Footer with Facebook link -->
+  <!-- Features Section -->
+  <section class="features animate-section" id="features">
+    <div class="container">
+      <h3>Key Features</h3>
+      <ul>
+        <li>Touch interactive 3D human model</li>
+        <li>Personalized health questionnaires</li>
+        <li>Real-time injury & pain assessment</li>
+        <li>Coming soon on App Store & Google Play</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Availability Section -->
+  <section class="availability animate-section" id="availability">
+    <div class="container">
+      <h3>Available on Your Favorite Platforms</h3>
+      <div class="store-icons">
+        <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-google-play"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with emphasized Facebook link -->
   <footer>
     <div class="container">
       <p>&copy; 2025 SELP. All Rights Reserved.</p>
@@ -248,17 +310,29 @@
         <a href="https://www.facebook.com/profile.php?id=61573430615677" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
+        <span>Follow us on Facebook</span>
       </div>
     </div>
   </footer>
 
-  <!-- GSAP Animations for smooth entrance effects -->
+  <!-- Intersection Observer for Section Animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const sections = document.querySelectorAll(".animate-section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("in-view");
+          }
+        });
+      }, { threshold: 0.2 });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+
+  <!-- GSAP Animations for initial hero content -->
   <script>
     gsap.from(".hero-content", { duration: 1.5, y: -50, opacity: 0, ease: "power2.out" });
-    gsap.from(".content h2", { duration: 1.5, y: 30, opacity: 0, delay: 0.5, ease: "power2.out" });
-    gsap.from(".content p", { duration: 1.5, y: 30, opacity: 0, delay: 0.7, ease: "power2.out", stagger: 0.2 });
-    gsap.from(".features h3, .features li", { duration: 1.5, y: 30, opacity: 0, delay: 1, ease: "power2.out", stagger: 0.2 });
-    gsap.from(".availability h3, .store-icons a", { duration: 1.5, y: 30, opacity: 0, delay: 1.5, ease: "power2.out", stagger: 0.2 });
   </script>
 </body>
 </html>
