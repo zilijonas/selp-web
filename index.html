@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SELP - Amazing Medical Assessment App Coming Soon</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Animate.css for simple CSS animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background: #f4f7f6;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .hero .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #fff;
+      color: #4facfe;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero .cta-button:hover {
+      background: #e0f7ff;
+      transform: scale(1.05);
+    }
+
+    /* Animated SVG Shape */
+    .animated-svg {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      opacity: 0.2;
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Content Section */
+    .content {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .content h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #4facfe;
+    }
+    .content p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      .content h2 {
+        font-size: 2em;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+  <!-- GSAP for advanced animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- Hero Section with animated SVG and call-to-action -->
+  <section class="hero">
+    <svg class="animated-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="40" stroke="white" stroke-width="2"/>
+      <line x1="50" y1="10" x2="50" y2="90" stroke="white" stroke-width="2"/>
+      <line x1="10" y1="50" x2="90" y2="50" stroke="white" stroke-width="2"/>
+    </svg>
+    <div class="hero-content">
+      <h1 class="animate__animated animate__fadeInDown">SELP</h1>
+      <p class="animate__animated animate__fadeInUp">Revolutionizing medical assessment with an immersive, interactive experience. Your journey to better health is about to begin.</p>
+      <a href="#" class="cta-button animate__animated animate__pulse animate__infinite">Coming Soon</a>
+    </div>
+  </section>
+
+  <!-- Content Section: App Introduction -->
+  <section class="content">
+    <h2 class="animate__animated animate__fadeInUp">A New Era in Self-Help</h2>
+    <p class="animate__animated animate__fadeInUp">
+      SELP isn’t just another app – it’s a transformative approach to understanding your body. With an interactive 3D human model, you can simply touch the part where you feel discomfort and indicate your pain level.
+    </p>
+    <p class="animate__animated animate__fadeInUp">
+      Our intelligent system then curates a personalized questionnaire, guiding you through a comprehensive assessment. The power of advanced technology meets empathetic self-help, making your well-being our top priority.
+    </p>
+    <p class="animate__animated animate__fadeInUp">
+      Get ready for SELP – the future of medical self-assessment is almost here.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SELP. All Rights Reserved.</p>
+  </footer>
+
+  <!-- GSAP Animations for smooth entrance effects -->
+  <script>
+    gsap.from(".hero-content", { duration: 1.5, y: -50, opacity: 0, ease: "power2.out" });
+    gsap.from(".content h2", { duration: 1.5, y: 30, opacity: 0, delay: 0.5, ease: "power2.out" });
+    gsap.from(".content p", { duration: 1.5, y: 30, opacity: 0, delay: 0.7, ease: "power2.out", stagger: 0.2 });
+  </script>
+</body>
+</html>
