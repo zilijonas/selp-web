@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SELP - Self Help | Coming Soon</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <!-- Animate.css for simple CSS animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
   <style>
     /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +22,8 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #121212;
+      background: linear-gradient(135deg, #add8e6, #00008b);
+      background-attachment: fixed;
       color: #eee;
       line-height: 1.6;
     }
@@ -37,33 +41,46 @@
       margin: 0 auto;
       padding: 0 30px;
     }
-    /* Navigation Bar */
-    .navbar {
+    /* Side Navigation */
+    #sideNav {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      background: rgba(20, 20, 20, 0.85);
-      padding: 15px 0;
+      width: 220px;
+      height: 100%;
+      background: rgba(20,20,20,0.9);
+      padding-top: 60px;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
     }
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navbar a {
-      margin: 0 15px;
+    #sideNav a {
+      display: block;
+      padding: 15px 25px;
       font-weight: 600;
       color: #eee;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    #sideNav a:hover {
+      background: rgba(0,242,254,0.1);
+    }
+    /* Burger Icon for Mobile */
+    .burger {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 2em;
+      color: #eee;
+      z-index: 1100;
+      cursor: pointer;
     }
     /* Hero Section */
     .hero {
       position: relative;
-      width: 100%;
+      margin-left: 220px;
+      width: calc(100% - 220px);
       height: 100vh;
-      background: linear-gradient(135deg, #1c3b70, #13294b);
+      background: linear-gradient(135deg, #add8e6, #00008b);
       background-size: 200% 200%;
       animation: moveBackground 10s ease infinite;
       display: flex;
@@ -78,14 +95,23 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    .hero .hero-content {
+      z-index: 2;
+    }
     .hero h1 {
-      font-size: 3.5em;
-      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      font-size: 4em;
+      font-weight: 700;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer {
+      0% { text-shadow: 0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2); }
+      50% { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6); }
+      100% { text-shadow: 0 0 5px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.2); }
     }
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.4em;
       max-width: 600px;
       margin: 0 auto 30px;
     }
@@ -101,17 +127,17 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0px); }
     }
-    /* Animated SVG Shape in Hero */
-    .animated-svg {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      opacity: 0.15;
-      animation: rotate 30s linear infinite;
+    /* More floating icons */
+    .floating-icon.phone {
+      font-size: 2.5em;
     }
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    /* Card style for sections */
+    .card {
+      background: rgba(20,20,20,0.8);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin: 40px auto;
     }
     /* Section Animations */
     .animate-section {
@@ -125,6 +151,8 @@
     }
     /* Content Section */
     .content {
+      margin-left: 220px;
+      width: calc(100% - 220px);
       padding: 100px 20px;
       text-align: center;
     }
@@ -141,10 +169,14 @@
     }
     /* Features Section */
     .features {
-      background: #1e1e1e;
+      margin-left: 220px;
+      width: calc(100% - 220px);
       padding: 80px 20px;
       text-align: center;
       color: #ddd;
+    }
+    .features .card {
+      max-width: 800px;
     }
     .features h3 {
       font-size: 2.2em;
@@ -154,7 +186,6 @@
     .features ul {
       list-style: none;
       padding: 0;
-      max-width: 800px;
       margin: 0 auto;
       text-align: left;
     }
@@ -175,8 +206,17 @@
     }
     /* Availability Section */
     .availability {
+      margin-left: 220px;
+      width: calc(100% - 220px);
       padding: 80px 20px;
       text-align: center;
+    }
+    .availability .card {
+      display: inline-block;
+      padding: 40px;
+      border-radius: 10px;
+      background: rgba(20,20,20,0.8);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
     .availability h3 {
       font-size: 2.2em;
@@ -196,7 +236,9 @@
     }
     /* Footer */
     footer {
-      background: #111;
+      margin-left: 220px;
+      width: calc(100% - 220px);
+      background: rgba(0,0,0,0.9);
       color: #aaa;
       text-align: center;
       padding: 30px 20px;
@@ -215,42 +257,45 @@
     }
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5em;
+      #sideNav {
+        transform: translateX(-100%);
       }
-      .content h2, .features h3, .availability h3 {
-        font-size: 2em;
+      .burger {
+        display: block;
       }
-      .container {
-        padding: 0 20px;
+      /* When side nav is toggled open, it overlays content */
+      .side-nav-open #sideNav {
+        transform: translateX(0);
       }
-      .navbar a {
-        margin: 0 10px;
-        font-size: 0.9em;
+      .content, .features, .availability, footer, .hero {
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 20px;
       }
     }
   </style>
-  <!-- GSAP for advanced animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#hero">Home</a>
-      <a href="#content">Overview</a>
-      <a href="#features">Features</a>
-      <a href="#availability">Availability</a>
-    </div>
+  <!-- Burger Icon for Mobile -->
+  <div class="burger" id="burger">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <!-- Side Navigation -->
+  <nav id="sideNav">
+    <a href="#hero">Home</a>
+    <a href="#content">Overview</a>
+    <a href="#features">Features</a>
+    <a href="#availability">Availability</a>
   </nav>
 
-  <!-- Hero Section with animated SVG, floating icons, and call-to-action title -->
+  <!-- Hero Section with animated content and floating icons -->
   <section class="hero" id="hero">
     <!-- Floating Medical Icons -->
-    <i class="fas fa-stethoscope floating-icon" style="top:10%; left:15%; animation-duration: 7s;"></i>
-    <i class="fas fa-heartbeat floating-icon" style="top:40%; right:10%; animation-duration: 8s;"></i>
-    <i class="fas fa-user-md floating-icon" style="bottom:15%; left:20%; animation-duration: 6s;"></i>
+    <i class="fas fa-stethoscope floating-icon" style="top:10%; left:10%; animation-duration: 7s;"></i>
+    <i class="fas fa-heartbeat floating-icon" style="top:40%; right:15%; animation-duration: 8s;"></i>
+    <i class="fas fa-user-md floating-icon" style="bottom:20%; left:20%; animation-duration: 6s;"></i>
+    <i class="fas fa-mobile-alt floating-icon phone" style="top:60%; right:20%; animation-duration: 7s;"></i>
     <!-- Animated SVG Shape -->
     <svg class="animated-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="40" stroke="white" stroke-width="2"/>
@@ -260,17 +305,17 @@
     <div class="hero-content container">
       <h1 class="animate__animated">SELP</h1>
       <p class="animate__animated">
-        <strong>SELP</strong> is short for <em>Self Help</em> – revolutionizing medical assessments with an immersive, interactive experience.
+        <strong>SELP</strong> is short for <em>Self Help</em>. Experience the future of medical assessments and wellness at your fingertips.
       </p>
     </div>
   </section>
 
-  <!-- Content Section: App Introduction -->
+  <!-- Content Section: App Introduction in a Card -->
   <section class="content animate-section" id="content">
-    <div class="container">
+    <div class="container card">
       <h2>A New Era in Self-Help</h2>
       <p>
-        With SELP, you’ll soon be able to assess injuries, health problems, pain, and more – just like real doctors. Our advanced interactive system uses a 3D human model and personalized questionnaires to deliver tailored health assessments.
+        With SELP, you'll soon be able to assess injuries, health problems, pain, and more – just like real doctors. Our advanced interactive system uses a 3D human model and personalized questionnaires to deliver tailored health assessments.
       </p>
       <p>
         Experience a seamless integration of technology and healthcare, designed to empower you in understanding and managing your well-being.
@@ -278,22 +323,22 @@
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Features Section with centered card -->
   <section class="features animate-section" id="features">
-    <div class="container">
+    <div class="container card">
       <h3>Key Features</h3>
       <ul>
         <li>Touch interactive 3D human model</li>
         <li>Personalized health questionnaires</li>
-        <li>Real-time injury & pain assessment</li>
-        <li>Coming soon on App Store & Google Play</li>
+        <li>Real-time injury &amp; pain assessment</li>
+        <li>Coming soon on App Store &amp; Google Play</li>
       </ul>
     </div>
   </section>
 
   <!-- Availability Section -->
   <section class="availability animate-section" id="availability">
-    <div class="container">
+    <div class="container card">
       <h3>Available on Your Favorite Platforms</h3>
       <div class="store-icons">
         <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
@@ -327,12 +372,14 @@
         });
       }, { threshold: 0.2 });
       sections.forEach(section => observer.observe(section));
-    });
-  </script>
 
-  <!-- GSAP Animations for initial hero content -->
-  <script>
-    gsap.from(".hero-content", { duration: 1.5, y: -50, opacity: 0, ease: "power2.out" });
+      // Burger menu toggle for mobile
+      const burger = document.getElementById("burger");
+      const body = document.body;
+      burger.addEventListener("click", () => {
+        body.classList.toggle("side-nav-open");
+      });
+    });
   </script>
 </body>
 </html>
