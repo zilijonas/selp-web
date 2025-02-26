@@ -33,6 +33,12 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npm run build
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
+      - name: Copy CNAME file
+        run: cp ./public/CNAME ./out/
+      - name: Fix asset paths for GitHub Pages
+        run: node fix-nextjs-gh-pages.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
