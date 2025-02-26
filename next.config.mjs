@@ -6,6 +6,11 @@ const nextConfig = {
   output: 'export',
   
   /**
+   * Use assetPrefix to load assets with relative paths for GitHub Pages
+   */
+  assetPrefix: '/',
+  
+  /**
    * Disable server-based image optimization as it's not compatible
    * with static exports
    */

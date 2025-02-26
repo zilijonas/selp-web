@@ -93,11 +93,11 @@ function fixJsAssetPaths(jsFile) {
 // Copy favicon to the root directory
 function copyFaviconToRoot(outDir) {
   const faviconPath = path.join(outDir, 'favicon.ico');
-  const appFaviconPath = path.join(outDir, 'app', 'favicon.ico');
+  const publicFaviconPath = path.join(__dirname, 'public', 'favicon.ico');
   
-  if (fs.existsSync(appFaviconPath) && !fs.existsSync(faviconPath)) {
-    fs.copyFileSync(appFaviconPath, faviconPath);
-    console.log('Copied favicon.ico to root directory');
+  if (fs.existsSync(publicFaviconPath) && !fs.existsSync(faviconPath)) {
+    fs.copyFileSync(publicFaviconPath, faviconPath);
+    console.log('Copied favicon.ico to root directory from public folder');
   }
 }
 
