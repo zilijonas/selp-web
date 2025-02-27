@@ -2,7 +2,7 @@
 
 import { FloatingIcons } from '@/app/components/floating-icons';
 import { Footer } from '@/app/components/footer';
-import { SiteHeader } from '@/app/components/site-header';
+import { Header } from '@/app/components/header';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col">
       <FloatingIcons />
-      <SiteHeader />
+      <Header />
       <main className="flex-1">
         <section id="hero" className="flex min-h-screen flex-col items-center justify-center space-y-10 py-24">
           <motion.div
