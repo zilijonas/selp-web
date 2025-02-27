@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Footer } from '../components/footer';
-import { SiteHeader } from '../components/header';
+// import { SiteHeader } from '../components/header';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -22,7 +22,7 @@ export default function Register() {
 
   return (
     <div className="relative flex min-h-screen flex-col">
-      <SiteHeader />
+      {/* <SiteHeader /> */}
       <main className="flex-1">
         <section className="container flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] py-12">
           <motion.div
