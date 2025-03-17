@@ -8,6 +8,7 @@ const nextConfig = {
   // Disable server-based image optimization as it's not compatible with static exports
   images: {
     unoptimized: true,
+    domains: ['selp.life'],
   },
 
   // Other Next.js options
