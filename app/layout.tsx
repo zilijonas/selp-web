@@ -1,8 +1,8 @@
-import { Montserrat, Poppins } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { Providers } from './providers';
-import './globals.css';
+import { Montserrat, Poppins } from 'next/font/google';
 import type React from 'react';
+import './globals.css';
+import { Providers } from './providers';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SELP',
     images: [
       {
-        url: 'https://selp.life/SELP_banner.webp',
+        url: 'https://selp.life/assets/SELP_banner.webp',
         width: 1792,
         height: 1024,
       },
@@ -43,7 +43,7 @@ export const metadata = {
     title: 'SELP - Self Help | Coming Soon',
     description:
       'SELP is short for Self Help. Experience the future of medical assessments and wellness at your fingertips.',
-    images: ['https://selp.life/SELP_banner.webp'],
+    images: ['https://selp.life/assets/SELP_banner.webp'],
   },
 };
 

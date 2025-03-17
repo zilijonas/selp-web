@@ -27,7 +27,7 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               className="flex flex-col items-center"
             >
-              <Image src="https://selp.life/logo.svg" alt="" width={234} height={100} priority aria-hidden="true" />
+              <Image src="/assets/logo.svg" alt="" width={234} height={100} priority aria-hidden="true" />
               <h1 className="sr-only">SELP - Self Help</h1>
             </motion.div>
             <motion.p
