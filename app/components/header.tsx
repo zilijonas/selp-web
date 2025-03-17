@@ -4,6 +4,7 @@ import { NavItem, useNavigation } from '@/app/hooks/useNavigation';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const navItems: NavItem[] = [
@@ -29,13 +30,8 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-2xl font-bold text-white"
-          >
-            SELP
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+            <Image src="/logo.svg" alt="SELP" width={93.5} height={40} />
           </motion.span>
         </Link>
         <nav className="hidden md:flex space-x-8">

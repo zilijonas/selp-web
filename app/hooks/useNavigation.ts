@@ -40,7 +40,7 @@ export const useNavigation = (navItems: NavItem[]) => {
     if (hash) {
       window.history.pushState(null, '', `#${hash}`);
     } else {
-      window.history.pushState('', document.title, window.location.pathname + window.location.search);
+      window.history.pushState(null, '', window.location.pathname + window.location.search);
     }
   };
 

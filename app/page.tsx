@@ -5,6 +5,7 @@ import { Footer } from '@/app/components/footer';
 import { Header } from '@/app/components/header';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
@@ -20,15 +21,16 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="container mx-auto px-6 sm:px-8 md:px-12 flex flex-col items-center justify-center gap-6 text-center"
           >
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-4xl font-extralight leading-tight tracking-tighter md:text-6xl lg:text-7xl lg:leading-[1.1] font-montserrat text-white"
+              className="flex flex-col items-center"
             >
-              SELP
-            </motion.h1>
-            <motion.span
+              <Image src="/logo.svg" alt="" width={234} height={100} priority aria-hidden="true" />
+              <h1 className="sr-only">SELP - Self Help</h1>
+            </motion.div>
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -36,7 +38,7 @@ export default function Home() {
             >
               <strong>SELP</strong> is short for <em>Self Help</em>. Experience the future of medical assessments and
               wellness at your fingertips.
-            </motion.span>
+            </motion.p>
           </motion.div>
         </section>
 
@@ -72,18 +74,30 @@ export default function Home() {
             className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-8 text-center"
           >
             <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl text-[#00f2fe]">Key Features</h2>
-            <ul className="space-y-2 text-left text-white">
+            <ul className="space-y-2 text-left text-white" aria-label="Key features of SELP">
               <li className="flex items-center">
-                <span className="mr-2 text-[#00f2fe]">✓</span> Touch interactive 3D human model
+                <span className="mr-2 text-[#00f2fe]" aria-hidden="true">
+                  ✓
+                </span>{' '}
+                Touch interactive 3D human model
               </li>
               <li className="flex items-center">
-                <span className="mr-2 text-[#00f2fe]">✓</span> Personalized health questionnaires
+                <span className="mr-2 text-[#00f2fe]" aria-hidden="true">
+                  ✓
+                </span>{' '}
+                Personalized health questionnaires
               </li>
               <li className="flex items-center">
-                <span className="mr-2 text-[#00f2fe]">✓</span> Real-time injury & pain assessment
+                <span className="mr-2 text-[#00f2fe]" aria-hidden="true">
+                  ✓
+                </span>{' '}
+                Real-time injury & pain assessment
               </li>
               <li className="flex items-center">
-                <span className="mr-2 text-[#00f2fe]">✓</span> Coming soon on App Store & Google Play
+                <span className="mr-2 text-[#00f2fe]" aria-hidden="true">
+                  ✓
+                </span>{' '}
+                Coming soon on App Store & Google Play
               </li>
             </ul>
           </motion.div>
@@ -134,14 +148,24 @@ export default function Home() {
               Available on Your Favorite Platforms
             </h2>
             <div className="flex space-x-8">
-              <Link href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.apple.com/app-store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download on App Store"
+              >
                 <Button size="lg" variant="ghost" className="text-4xl text-white w-20 h-20 p-0">
-                  <i className="fab fa-apple" style={{ fontSize: '48px' }}></i>
+                  <i className="fab fa-apple" style={{ fontSize: '48px' }} aria-hidden="true"></i>
                 </Button>
               </Link>
-              <Link href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://play.google.com/store"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+              >
                 <Button size="lg" variant="ghost" className="text-4xl text-white w-20 h-20 p-0">
-                  <i className="fab fa-google-play" style={{ fontSize: '36px' }}></i>
+                  <i className="fab fa-google-play" style={{ fontSize: '36px' }} aria-hidden="true"></i>
                 </Button>
               </Link>
             </div>
