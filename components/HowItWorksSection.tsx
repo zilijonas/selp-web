@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-20 md:py-32 bg-[#E9FEF5]">
+    <section id="how-it-works" className="py-20 md:py-32 bg-[#E9FEF5]">
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center space-y-4 mb-16 max-w-4xl mx-auto">
           <Badge

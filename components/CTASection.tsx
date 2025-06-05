@@ -1,6 +1,14 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 
 export default function CTASection() {
+  const handleDownloadClick = () => {
+    alert(
+      "The SELP app is still being built! Please register for our newsletter to be the first to know when it's available for download."
+    );
+  };
+
   return (
     <section className="py-20 md:py-32 bg-[#186B52] text-white">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 text-center">
@@ -18,6 +26,7 @@ export default function CTASection() {
               size="lg"
               variant="secondary"
               className="text-lg px-8 bg-white text-[#186B52] hover:bg-gray-100"
+              onClick={handleDownloadClick}
             >
               Download for iOS
             </Button>
@@ -25,6 +34,7 @@ export default function CTASection() {
               size="lg"
               variant="secondary"
               className="text-lg px-8 bg-white text-[#186B52] hover:bg-gray-100"
+              onClick={handleDownloadClick}
             >
               Download for Android
             </Button>

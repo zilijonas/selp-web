@@ -25,16 +25,16 @@ export default function Header() {
             Features
           </Link>
           <Link
+            href="#how-it-works"
+            className="text-sm font-medium hover:text-[#186B52] transition-colors"
+          >
+            How It Works
+          </Link>
+          <Link
             href="#testimonials"
             className="text-sm font-medium hover:text-[#186B52] transition-colors"
           >
             Testimonials
-          </Link>
-          <Link
-            href="#about"
-            className="text-sm font-medium hover:text-[#186B52] transition-colors"
-          >
-            About
           </Link>
           <Link
             href="#contact"
@@ -45,16 +45,18 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Button
+          {/* <Button
             variant="ghost"
             size="sm"
-            className="hidden sm:inline-flex hover:text-[#186B52]"
+            className="hover:text-[#186B52] hidden md:inline-flex"
           >
             Sign In
-          </Button>
-          <Button size="sm" className="bg-[#186B52] hover:bg-[#2A8E72]">
-            Download App
-            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button> */}
+          <Button size="sm" className="bg-[#186B52] hover:bg-[#2A8E72]" asChild>
+            <Link href="#newsletter">
+              Download App
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>

@@ -42,7 +42,7 @@ export default function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 border-[#186B52] text-[#186B52] hover:bg-[#186B52] hover:text-white"
+                className="text-lg px-8 border-[#186B52] text-[#186B52] hover:bg-[#186B52] hover:text-white hidden"
               >
                 Watch Demo
               </Button>

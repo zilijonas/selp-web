@@ -29,12 +29,12 @@ export default function Footer() {
               insights that feel like talking to your family doctor.
             </p>
             <div className="flex space-x-4">
-              <Link
+              {/* <Link
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
-              </Link>
+              </Link> */}
               <Link
                 href="https://www.instagram.com/selp.life?igsh=YmR2bHBtaTFzb2l4&utm_source=qr"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -115,7 +115,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-400">
                 <Mail className="h-4 w-4" />
-                <span>lijonas.it@gmail.com</span>
+                <a href="mailto:lijonas.it@gmail.com">lijonas.it@gmail.com</a>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Phone className="h-4 w-4" />
