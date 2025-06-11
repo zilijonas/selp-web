@@ -11,6 +11,73 @@ export const metadata: Metadata = {
   description:
     "Tap a body part, answer smart, personalized questions, and get insights that feel like talking to your family doctor.",
   keywords: "health, self-assessment, medical, symptoms, healthcare, wellness",
+  authors: [{ name: "SELP Team" }],
+  creator: "SELP",
+  publisher: "SELP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://selp.life"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://selp.life",
+    siteName: "SELP",
+    title: "SELP - Your Family Doctor In Your Pocket",
+    description:
+      "Self Help. Your Family Doctor In Your Pocket. Tap a body part, answer smart, personalized questions, and get insights that feel like talking to your family doctor.",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1640,
+        height: 720,
+        alt: "SELP - Self Help. Your Family Doctor In Your Pocket.",
+        type: "image/webp",
+      },
+      {
+        url: "/og-image.png",
+        width: 1640,
+        height: 720,
+        alt: "SELP - Self Help. Your Family Doctor In Your Pocket.",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@selp",
+    creator: "@selp",
+    title: "SELP - Your Family Doctor In Your Pocket",
+    description:
+      "Self Help. Your Family Doctor In Your Pocket. Tap a body part, answer smart, personalized questions, and get insights that feel like talking to your family doctor.",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1640,
+        height: 720,
+        alt: "SELP - Self Help. Your Family Doctor In Your Pocket.",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
 };
 
 export default function RootLayout({
