@@ -19,7 +19,18 @@ export default function ConsentManager() {
             'ad_user_data': 'denied', 
             'ad_personalization': 'denied',
             'analytics_storage': 'denied',
-            'wait_for_update': 2000
+            'wait_for_update': 2000,
+            // Regional scoping for better compliance
+            'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO']
+          });
+          
+          // For non-EEA regions, allow analytics by default while still respecting user choice for ads
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied', 
+            'ad_personalization': 'denied',
+            'analytics_storage': 'granted',
+            'region': ['US', 'CA', 'AU', 'NZ', 'JP', 'KR', 'SG', 'MY', 'TH', 'VN', 'ID', 'PH']
           });
           
           // Enable ads data redaction for privacy compliance

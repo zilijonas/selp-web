@@ -91,9 +91,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/selp-icon.svg" type="image/svg+xml" />
+        <ConsentManager />
       </head>
       <body className={inter.className}>
-        <ConsentManager />
         {children}
         <CookieConsentBanner />
         <GoogleAnalytics gaId="G-Y019WXTZ3R" dataLayerName="dataLayer" />

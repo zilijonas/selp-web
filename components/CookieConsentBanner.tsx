@@ -36,42 +36,63 @@ export default function CookieConsentBanner() {
 
   const updateGoogleAnalyticsConsent = (hasConsent: boolean) => {
     if (typeof window !== "undefined" && window.gtag) {
-      // Update consent according to Google's consent mode v2
-      window.gtag("consent", "update", {
-        ad_storage: hasConsent ? "granted" : "denied",
-        ad_user_data: hasConsent ? "granted" : "denied",
-        ad_personalization: hasConsent ? "granted" : "denied",
-        analytics_storage: hasConsent ? "granted" : "denied",
-      });
+      try {
+        // Update consent according to Google's consent mode v2
+        // This should be called immediately when user makes a choice
+        window.gtag("consent", "update", {
+          ad_storage: hasConsent ? "granted" : "denied",
+          ad_user_data: hasConsent ? "granted" : "denied",
+          ad_personalization: hasConsent ? "granted" : "denied",
+          analytics_storage: hasConsent ? "granted" : "denied",
+        });
+
+        // Optional: Send an event to track consent updates
+        window.gtag("event", "consent_update", {
+          consent_status: hasConsent ? "granted" : "denied",
+          timestamp: new Date().toISOString(),
+        });
+      } catch (error) {
+        console.warn("Failed to update Google consent:", error);
+      }
     }
   };
 
   const handleAccept = () => {
-    // Save consent choice
-    Cookies.set("cookie-consent", "accepted", {
-      expires: 365,
-      sameSite: "lax",
-    });
+    try {
+      // Update Google Analytics consent FIRST - this is critical
+      updateGoogleAnalyticsConsent(true);
 
-    // Update Google Analytics consent
-    updateGoogleAnalyticsConsent(true);
+      // Then save consent choice
+      Cookies.set("cookie-consent", "accepted", {
+        expires: 365,
+        sameSite: "lax",
+        secure: window.location.protocol === "https:",
+      });
 
-    // Hide banner
-    setShowBanner(false);
+      // Hide banner
+      setShowBanner(false);
+    } catch (error) {
+      console.error("Failed to save consent:", error);
+    }
   };
 
   const handleDecline = () => {
-    // Save consent choice
-    Cookies.set("cookie-consent", "declined", {
-      expires: 365,
-      sameSite: "lax",
-    });
+    try {
+      // Update Google Analytics consent FIRST
+      updateGoogleAnalyticsConsent(false);
 
-    // Update Google Analytics consent (remains denied)
-    updateGoogleAnalyticsConsent(false);
+      // Save consent choice
+      Cookies.set("cookie-consent", "declined", {
+        expires: 365,
+        sameSite: "lax",
+        secure: window.location.protocol === "https:",
+      });
 
-    // Hide banner
-    setShowBanner(false);
+      // Hide banner
+      setShowBanner(false);
+    } catch (error) {
+      console.error("Failed to save consent:", error);
+    }
   };
 
   // Don't render anything until component is mounted to avoid hydration issues
