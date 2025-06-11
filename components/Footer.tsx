@@ -38,12 +38,18 @@ export default function Footer() {
               <Link
                 href="https://www.instagram.com/selp.life?igsh=YmR2bHBtaTFzb2l4&utm_source=qr"
                 className="text-gray-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
                 href="https://www.facebook.com/profile.php?id=61573430615677"
                 className="text-gray-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </Link>

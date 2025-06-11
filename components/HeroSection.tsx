@@ -73,6 +73,8 @@ export default function HeroSection() {
                   width={2552}
                   height={2841}
                   priority
+                  placeholder="blur"
+                  blurDataURL="/screens/screens-placeholder.webp"
                 />
               </div>
             </div>
