@@ -75,7 +75,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section id="newsletter" className="py-20 bg-background">
+    <section id="newsletter" className="py-20 md:py-32 bg-background">
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="space-y-4">

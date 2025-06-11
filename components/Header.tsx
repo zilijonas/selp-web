@@ -37,7 +37,7 @@ export default function Header() {
             Testimonials
           </Link>
           <Link
-            href="#contact"
+            href="#newsletter"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Contact
