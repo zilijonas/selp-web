@@ -21,7 +21,7 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screens/screen-1.png"
+                src="/screens/screen-1.webp"
                 alt="Step 1: Select body part"
                 width={250}
                 height={500}
@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screens/screen-2.png"
+                src="/screens/screen-2.webp"
                 alt="Step 2: Answer questions"
                 width={250}
                 height={500}
@@ -62,7 +62,7 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screens/screen-3.png"
+                src="/screens/screen-3.webp"
                 alt="Step 3: Get insights"
                 width={250}
                 height={500}
