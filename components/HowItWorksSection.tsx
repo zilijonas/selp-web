@@ -26,6 +26,8 @@ export default function HowItWorksSection() {
                 width={250}
                 height={500}
                 loading="lazy"
+                placeholder="blur"
+                blurDataURL="/screens/screen-1-placeholder.webp"
               />
               <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 1
@@ -48,6 +50,8 @@ export default function HowItWorksSection() {
                 width={250}
                 height={500}
                 loading="lazy"
+                placeholder="blur"
+                blurDataURL="/screens/screen-2-placeholder.webp"
               />
               <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 2
@@ -69,6 +73,8 @@ export default function HowItWorksSection() {
                 width={250}
                 height={500}
                 loading="lazy"
+                placeholder="blur"
+                blurDataURL="/screens/screen-3-placeholder.webp"
               />
               <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 3
