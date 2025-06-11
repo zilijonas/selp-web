@@ -90,7 +90,7 @@ export default function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="space-y-2">
               <Link
-                href="/#hero"
+                href="/"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 About

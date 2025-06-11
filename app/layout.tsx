@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
-import { hasAnalyticsConsent } from "@/lib/consent";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -82,13 +81,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const hasConsent = await hasAnalyticsConsent();
-
   return (
     <html lang="en">
       <head>
@@ -97,7 +94,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         {children}
         <CookieConsentBanner />
-        {hasConsent && <GoogleAnalytics gaId="G-Y019WXTZ3R" />}
+        <GoogleAnalytics gaId="G-Y019WXTZ3R" />
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center space-x-3">
+        <Link href="/" className="flex items-center space-x-3">
           <Image
             src="/selp-logo.svg"
             alt="SELP"
@@ -15,7 +15,7 @@ export default function Header() {
             height={32}
             className="h-10"
           />
-        </div>
+        </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
           <Link
