@@ -21,7 +21,7 @@ export default function Footer() {
                 alt="SELP"
                 width={120}
                 height={60}
-                className="h-15"
+                className="h-15 w-auto"
               />
             </div>
             <p className="text-gray-400">

@@ -13,7 +13,7 @@ export default function Header() {
             alt="SELP"
             width={80}
             height={32}
-            className="h-10"
+            className="h-10 w-auto"
           />
         </Link>
 
