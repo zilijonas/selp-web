@@ -68,7 +68,7 @@ export default function HeroSection() {
             <div className="grid grid-cols-1 gap-4 max-w-3xl">
               <div className="flex justify-center">
                 <Image
-                  src="/screens.png"
+                  src="/screens/screens.png"
                   alt="SELP App - Body Selection"
                   width={2552}
                   height={2841}

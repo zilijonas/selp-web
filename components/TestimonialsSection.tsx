@@ -28,8 +28,8 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-          <Card className="bg-transparent border-0">
-            <CardHeader>
+          <Card className="border border-primary/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 flex flex-col h-full">
+            <CardHeader className="flex-1">
               <div className="flex items-center justify-center space-x-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -44,10 +44,10 @@ export default function TestimonialsSection() {
                 my pocket."
               </CardDescription>
             </CardHeader>
-            <CardFooter className="justify-center">
+            <CardFooter className="justify-center mt-auto">
               <div className="flex items-center space-x-3">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
+                  src="/person.svg?height=40&width=40"
                   alt="Sarah Johnson"
                   width={40}
                   height={40}
@@ -63,8 +63,8 @@ export default function TestimonialsSection() {
             </CardFooter>
           </Card>
 
-          <Card className="bg-transparent border-0">
-            <CardHeader>
+          <Card className="border border-primary/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 flex flex-col h-full">
+            <CardHeader className="flex-1">
               <div className="flex items-center justify-center space-x-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -79,10 +79,10 @@ export default function TestimonialsSection() {
                 tool for patient education."
               </CardDescription>
             </CardHeader>
-            <CardFooter className="justify-center">
+            <CardFooter className="justify-center mt-auto">
               <div className="flex items-center space-x-3">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
+                  src="/person.svg?height=40&width=40"
                   alt="Dr. Michael Chen"
                   width={40}
                   height={40}
@@ -100,8 +100,8 @@ export default function TestimonialsSection() {
             </CardFooter>
           </Card>
 
-          <Card className="bg-transparent border-0">
-            <CardHeader>
+          <Card className="border border-primary/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 flex flex-col h-full">
+            <CardHeader className="flex-1">
               <div className="flex items-center justify-center space-x-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -116,10 +116,10 @@ export default function TestimonialsSection() {
                 my health."
               </CardDescription>
             </CardHeader>
-            <CardFooter className="justify-center">
+            <CardFooter className="justify-center mt-auto">
               <div className="flex items-center space-x-3">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
+                  src="/person.svg?height=40&width=40"
                   alt="Emily Rodriguez"
                   width={40}
                   height={40}

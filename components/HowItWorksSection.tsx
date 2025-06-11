@@ -17,16 +17,16 @@ export default function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="grid gap-12 md:grid-cols-3 items-center max-w-5xl mx-auto">
+        <div className="grid gap-12 md:grid-cols-3 items-start max-w-5xl mx-auto">
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screen-1.png"
+                src="/screens/screen-1.png"
                 alt="Step 1: Select body part"
                 width={250}
                 height={500}
               />
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+              <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 1
               </div>
             </div>
@@ -42,12 +42,12 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screen-2.png"
+                src="/screens/screen-2.png"
                 alt="Step 2: Answer questions"
                 width={250}
                 height={500}
               />
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+              <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 2
               </div>
             </div>
@@ -62,12 +62,12 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screen-3.png"
+                src="/screens/screen-3.png"
                 alt="Step 3: Get insights"
                 width={250}
                 height={500}
               />
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+              <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 3
               </div>
             </div>
