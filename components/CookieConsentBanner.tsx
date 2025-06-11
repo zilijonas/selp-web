@@ -46,6 +46,14 @@ export default function CookieConsentBanner() {
           analytics_storage: hasConsent ? "granted" : "denied",
         });
 
+        // Send page view if consent is granted
+        if (hasConsent) {
+          window.gtag("event", "page_view", {
+            page_title: document.title,
+            page_location: window.location.href,
+          });
+        }
+
         // Optional: Send an event to track consent updates
         window.gtag("event", "consent_update", {
           consent_status: hasConsent ? "granted" : "denied",
