@@ -75,20 +75,20 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section id="newsletter" className="py-20 md:py-32 bg-[#E9FEF5]">
+    <section id="newsletter" className="py-20 bg-background">
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <Badge
               variant="secondary"
-              className="w-fit mx-auto bg-[#35C998]/20 text-[#186B52] border-[#35C998]/30"
+              className="w-fit mx-auto bg-primary/20 text-primary border-primary/30"
             >
               Stay in the loop
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
               Get health tips and updates
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Find out when we launch our app and get early access to the beta.
               Subscribe to receive the latest health insights, app updates, and
               wellness tips directly in your inbox.
@@ -101,7 +101,7 @@ export default function NewsletterSection() {
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className={`border-[#186B52]/20 focus:border-[#186B52] ${
+                  className={`border-primary/30 focus:border-primary ${
                     errors.email ? "border-red-500 focus:border-red-500" : ""
                   }`}
                   {...register("email", {
@@ -121,7 +121,7 @@ export default function NewsletterSection() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#186B52] hover:bg-[#2A8E72] px-8 disabled:opacity-50"
+                className="bg-primary hover:bg-primary/90 px-8 disabled:opacity-50"
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
                 <Mail className="ml-2 h-4 w-4" />
@@ -147,7 +147,7 @@ export default function NewsletterSection() {
             )}
           </form>
 
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             No spam, unsubscribe at any time. We respect your privacy.
           </p>
         </div>

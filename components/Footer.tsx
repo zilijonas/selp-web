@@ -19,9 +19,9 @@ export default function Footer() {
               <Image
                 src="/selp-logo.svg"
                 alt="SELP"
-                width={140}
-                height={64}
-                className="h-16"
+                width={120}
+                height={60}
+                className="h-15"
               />
             </div>
             <p className="text-gray-400">

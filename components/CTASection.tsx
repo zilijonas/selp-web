@@ -19,13 +19,13 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-[#186B52] text-white">
+    <section id="cta" className="py-20 md:py-32">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 text-center">
         <div className="space-y-8 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground">
             Take control of your health today
           </h2>
-          <p className="text-xl text-[#35C998]">
+          <p className="text-xl text-muted-foreground">
             Join thousands of users who trust SELP for their health
             self-assessment needs. Download the app and start your journey to
             better health insights.
@@ -35,8 +35,7 @@ export default function CTASection() {
               <DialogTrigger asChild>
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="text-lg px-8 bg-white text-[#186B52] hover:bg-gray-100"
+                  className="text-lg bg-primary hover:bg-primary/90 disabled:opacity-50"
                   onClick={handleDownloadClick}
                 >
                   Download for iOS
@@ -44,7 +43,7 @@ export default function CTASection() {
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                  <DialogTitle className="text-[#186B52]">
+                  <DialogTitle className="text-primary">
                     Coming Soon!
                   </DialogTitle>
                   <DialogDescription className="text-center py-4">
@@ -55,7 +54,7 @@ export default function CTASection() {
                 </DialogHeader>
                 <Button
                   onClick={() => setIsDialogOpen(false)}
-                  className="bg-[#186B52] hover:bg-[#2A8E72]"
+                  className="bg-primary hover:bg-primary/90"
                 >
                   Got it
                 </Button>
@@ -65,8 +64,7 @@ export default function CTASection() {
               <DialogTrigger asChild>
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="text-lg px-8 bg-white text-[#186B52] hover:bg-gray-100"
+                  className="text-lg bg-primary hover:bg-primary/90 disabled:opacity-50"
                   onClick={handleDownloadClick}
                 >
                   Download for Android
@@ -74,7 +72,7 @@ export default function CTASection() {
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                  <DialogTitle className="text-[#186B52]">
+                  <DialogTitle className="text-primary">
                     Coming Soon!
                   </DialogTitle>
                   <DialogDescription className="text-center py-4">
@@ -85,14 +83,14 @@ export default function CTASection() {
                 </DialogHeader>
                 <Button
                   onClick={() => setIsDialogOpen(false)}
-                  className="bg-[#186B52] hover:bg-[#2A8E72]"
+                  className="bg-primary hover:bg-primary/90"
                 >
                   Got it
                 </Button>
               </DialogContent>
             </Dialog>
           </div>
-          <p className="text-sm text-[#35C998]">
+          <p className="text-sm text-muted-foreground">
             Free download • Privacy-first • Doctor-approved
           </p>
         </div>
