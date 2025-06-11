@@ -91,7 +91,7 @@ export default function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="space-y-2">
               <Link
-                href="/"
+                href="/about"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 About
@@ -146,19 +146,19 @@ export default function Footer() {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="/privacy-policy"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
+              className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-and-conditions"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
+              className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
             >
               Terms of Service
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
+              className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
             >
               Medical Disclaimer
             </Link>
