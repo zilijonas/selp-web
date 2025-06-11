@@ -9,10 +9,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SELP - Health Self-Assessment App",
+  title: "SELP - Self help. Your family doctor in your pocket.",
   description:
-    "Tap a body part, answer smart, personalized questions, and get insights that feel like talking to your family doctor.",
-  keywords: "health, self-assessment, medical, symptoms, healthcare, wellness",
+    "SELP is your self-help health assistant. Tap the body part that hurts, answer tailored questions, and get a doctor-level analysis — all in your pocket.",
+  keywords:
+    "health, self-assessment, medical, symptoms, healthcare, wellness, self-help, AI health, 3D body model, pain assessment",
   authors: [{ name: "SELP Team" }],
   creator: "SELP",
   publisher: "SELP",
@@ -30,22 +31,22 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://selp.life",
     siteName: "SELP",
-    title: "SELP - Your Family Doctor In Your Pocket",
+    title: "SELP - Self help. Your family doctor in your pocket.",
     description:
-      "Self Help. Your Family Doctor In Your Pocket. Tap a body part, answer smart, personalized questions, and get insights that feel like talking to your family doctor.",
+      "SELP is your self-help health assistant. Tap the body part that hurts, answer tailored questions, and get a doctor-level analysis — all in your pocket.",
     images: [
       {
         url: "/og-image.webp",
         width: 1640,
         height: 720,
-        alt: "SELP - Self Help. Your Family Doctor In Your Pocket.",
+        alt: "SELP - Self help. Your family doctor in your pocket.",
         type: "image/webp",
       },
       {
         url: "/og-image.png",
         width: 1640,
         height: 720,
-        alt: "SELP - Self Help. Your Family Doctor In Your Pocket.",
+        alt: "SELP - Self help. Your family doctor in your pocket.",
         type: "image/png",
       },
     ],
@@ -54,15 +55,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@selp",
     creator: "@selp",
-    title: "SELP - Your Family Doctor In Your Pocket",
+    title: "SELP - Self help. Your family doctor in your pocket.",
     description:
-      "Self Help. Your Family Doctor In Your Pocket. Tap a body part, answer smart, personalized questions, and get insights that feel like talking to your family doctor.",
+      "SELP is your self-help health assistant. Tap the body part that hurts, answer tailored questions, and get a doctor-level analysis — all in your pocket.",
     images: [
       {
         url: "/og-image.webp",
         width: 1640,
         height: 720,
-        alt: "SELP - Self Help. Your Family Doctor In Your Pocket.",
+        alt: "SELP - Self help. Your family doctor in your pocket.",
       },
     ],
   },

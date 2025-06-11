@@ -39,9 +39,9 @@ export default function TestimonialsSection() {
                 ))}
               </div>
               <CardDescription className="text-muted-foreground text-center">
-                "SELP has revolutionized how I monitor my health. The questions
-                are so intuitive and the insights feel like having a doctor in
-                my pocket."
+                "SELP has revolutionized how I monitor my health. The 3D body
+                model is so intuitive and the AI analysis feels like having a
+                doctor in my pocket."
               </CardDescription>
             </CardHeader>
             <CardFooter className="justify-center mt-auto">
@@ -75,8 +75,8 @@ export default function TestimonialsSection() {
               </div>
               <CardDescription className="text-muted-foreground text-center">
                 "As a physician, I'm impressed by the accuracy and
-                thoughtfulness of SELP's assessment process. It's a valuable
-                tool for patient education."
+                thoughtfulness of SELP's dynamic questionnaire. The AI-powered
+                analysis provides valuable insights for patient education."
               </CardDescription>
             </CardHeader>
             <CardFooter className="justify-center mt-auto">
@@ -111,9 +111,9 @@ export default function TestimonialsSection() {
                 ))}
               </div>
               <CardDescription className="text-muted-foreground text-center">
-                "The app helped me identify symptoms I should discuss with my
-                doctor. It's user-friendly and gives me confidence in managing
-                my health."
+                "The app helped me understand my symptoms better before visiting
+                my doctor. The privacy-first approach gives me confidence in
+                sharing my health data."
               </CardDescription>
             </CardHeader>
             <CardFooter className="justify-center mt-auto">

@@ -83,10 +83,10 @@ export default function NewsletterSection() {
               variant="secondary"
               className="w-fit mx-auto bg-primary/20 text-primary border-primary/30"
             >
-              Stay in the loop
+              Download Selp Today
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
-              Get health tips and updates
+              Be the first to access your family doctor in your pocket
             </h2>
             <p className="text-xl text-muted-foreground">
               Find out when we launch our app and get early access to the beta.
@@ -123,7 +123,7 @@ export default function NewsletterSection() {
                 disabled={isSubmitting}
                 className="bg-primary hover:bg-primary/90 px-8 disabled:opacity-50"
               >
-                {isSubmitting ? "Subscribing..." : "Subscribe"}
+                {isSubmitting ? "Subscribing..." : "Get Early Access"}
                 <Mail className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -148,7 +148,8 @@ export default function NewsletterSection() {
           </form>
 
           <p className="text-sm text-muted-foreground">
-            No spam, unsubscribe at any time. We respect your privacy.
+            Privacy-first design. No spam, unsubscribe at any time. We respect
+            your privacy.
           </p>
         </div>
       </div>

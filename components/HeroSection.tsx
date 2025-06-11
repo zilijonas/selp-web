@@ -18,13 +18,16 @@ export default function HeroSection() {
                 🩺 Your Personal Health Assistant
               </Badge>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-foreground">
-                Health Insights
-                <span className="text-primary"> Made Simple</span>
+                Self help.
+                <span className="text-primary">
+                  {" "}
+                  Family doctor in your pocket.
+                </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-[600px] mx-auto lg:mx-0">
-                Tap a body part, answer smart, personalized questions, and get
-                insights that feel like talking to your family doctor. SELP
-                makes health self-assessment intuitive and accessible.
+                SELP is your self-help health assistant. Tap the body part that
+                hurts, answer tailored questions, and get a doctor-level
+                analysis — all in your pocket.
               </p>
             </div>
 
@@ -51,15 +54,15 @@ export default function HeroSection() {
             <div className="flex items-center justify-center lg:justify-start space-x-8 text-sm text-muted-foreground flex-wrap gap-y-2">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-primary" />
-                <span>Free to download</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-primary" />
                 <span>Privacy-first design</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-primary" />
-                <span>Doctor-approved</span>
+                <span>AI-powered analysis</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-primary" />
+                <span>Accessible anytime</span>
               </div>
             </div>
           </div>
@@ -69,7 +72,7 @@ export default function HeroSection() {
               <div className="flex justify-center">
                 <Image
                   src="/screens/screens.webp"
-                  alt="SELP App - Body Selection"
+                  alt="SELP App - Tap the body part that hurts"
                   width={2552}
                   height={2841}
                   priority

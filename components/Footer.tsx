@@ -21,12 +21,13 @@ export default function Footer() {
                 alt="SELP"
                 width={120}
                 height={60}
-                className="h-15 w-auto"
+                className="h-14 w-auto"
               />
             </div>
             <p className="text-gray-400">
-              Your personal health assessment companion. Tap, answer, and get
-              insights that feel like talking to your family doctor.
+              SELP is your self-help health assistant. Tap the body part that
+              hurts, answer tailored questions, and get a doctor-level analysis
+              — all in your pocket.
             </p>
             <div className="flex space-x-4">
               {/* <Link
@@ -36,7 +37,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </Link> */}
               <Link
-                href="https://www.instagram.com/selp.life?igsh=YmR2bHBtaTFzb2l4&utm_source=qr"
+                href="https://www.instagram.com/selp.life?igsh=YmR2bHBtaTFzb2x4&utm_source=qr"
                 className="text-gray-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"

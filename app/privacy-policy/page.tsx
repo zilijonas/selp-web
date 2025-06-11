@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - SELP",
-  description: "Learn how SELP protects your privacy and handles your data.",
+  description:
+    "Learn how SELP protects your privacy and handles your health data with our privacy-first design approach.",
 };
 
 export default function PrivacyPolicy() {

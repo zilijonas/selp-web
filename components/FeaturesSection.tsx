@@ -14,11 +14,11 @@ export default function FeaturesSection() {
             Features
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground">
-            Your health, simplified
+            Smart Self-Help for Your Body
           </h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            SELP combines medical expertise with intuitive design to make health
-            self-assessment accessible to everyone.
+            Selp combines advanced AI models with an intuitive 3D interface to
+            empower you to understand, track, and respond to bodily discomfort.
           </p>
         </div>
 
@@ -29,13 +29,14 @@ export default function FeaturesSection() {
                 <Smartphone className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-foreground text-center">
-                Interactive Body Map
+                3D Human Model Navigation
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                Simply tap any body part on our 3D model to start your
-                personalized health assessment journey.
+                Touch and explore any part of the body with pinpoint precision.
+                Zoom, rotate, and tap on the exact body region where you feel
+                discomfort.
               </p>
             </CardContent>
           </Card>
@@ -46,13 +47,14 @@ export default function FeaturesSection() {
                 <Brain className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-foreground text-center">
-                Smart Questions
+                Dynamic Health Questionnaire
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                AI-powered questionnaires that adapt based on your responses,
-                just like a conversation with your doctor.
+                Personalized follow-up questions based on body part and
+                severity. Real-time progress indicator shows how much you've
+                completed.
               </p>
             </CardContent>
           </Card>
@@ -63,13 +65,14 @@ export default function FeaturesSection() {
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-foreground text-center">
-                Privacy Protected
+                Privacy First
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                Your health data stays private and secure. We never share your
-                personal information with third parties.
+                Your data is encrypted and processed securely. Only you see your
+                results. We never share your personal information with third
+                parties.
               </p>
             </CardContent>
           </Card>
@@ -80,14 +83,14 @@ export default function FeaturesSection() {
                 <Stethoscope className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-foreground text-center">
-                Doctor-Reviewed
+                AI-Based Symptom Analysis
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                Numerous doctors have confirmed that our questionnaire is
-                accurate and can provide legitimate diagnosis as well as
-                effective solutions.
+                Advanced AI models analyze your input to assess severity, detect
+                possible conditions, and generate health guidance in plain
+                language.
               </p>
             </CardContent>
           </Card>

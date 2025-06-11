@@ -23,12 +23,12 @@ export default function CTASection() {
       <div className="container max-w-7xl mx-auto px-4 md:px-6 text-center">
         <div className="space-y-8 max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground">
-            Take control of your health today
+            Stop guessing what's wrong. Start understanding your body.
           </h2>
           <p className="text-xl text-muted-foreground">
-            Join thousands of users who trust SELP for their health
-            self-assessment needs. Download the app and start your journey to
-            better health insights.
+            Selp helps you take the first step toward better health—right from
+            your pocket. Understand your symptoms without needing medical
+            knowledge.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -91,7 +91,7 @@ export default function CTASection() {
             </Dialog>
           </div>
           <p className="text-sm text-muted-foreground">
-            Free download • Privacy-first • Doctor-approved
+            Privacy-first • Accessible anytime • Backed by AI, built for humans
           </p>
         </div>
       </div>

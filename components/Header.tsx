@@ -54,7 +54,7 @@ export default function Header() {
           </Button> */}
           <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
             <Link href="#newsletter">
-              Download App
+              Get Early Access
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
