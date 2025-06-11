@@ -25,6 +25,7 @@ export default function HowItWorksSection() {
                 alt="Step 1: Select body part"
                 width={250}
                 height={500}
+                loading="lazy"
               />
               <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 1
@@ -46,6 +47,7 @@ export default function HowItWorksSection() {
                 alt="Step 2: Answer questions"
                 width={250}
                 height={500}
+                loading="lazy"
               />
               <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 2
@@ -66,6 +68,7 @@ export default function HowItWorksSection() {
                 alt="Step 3: Get insights"
                 width={250}
                 height={500}
+                loading="lazy"
               />
               <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
                 3

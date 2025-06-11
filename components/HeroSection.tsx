@@ -72,6 +72,7 @@ export default function HeroSection() {
                   alt="SELP App - Body Selection"
                   width={2552}
                   height={2841}
+                  priority
                 />
               </div>
             </div>
