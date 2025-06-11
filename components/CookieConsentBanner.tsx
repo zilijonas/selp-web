@@ -28,29 +28,15 @@ export default function CookieConsentBanner() {
     if (!existingConsent) {
       setShowBanner(true);
     } else {
-      // Apply existing consent settings
-      updateGoogleAnalyticsConsent(existingConsent === "accepted");
+      // Apply existing consent settings to Google Analytics
+      const hasConsent = existingConsent === "accepted";
+      updateGoogleAnalyticsConsent(hasConsent);
     }
   }, []);
 
-  useEffect(() => {
-    // Skip the first render to avoid unnecessary updates
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-
-    // Update consent when banner is dismissed
-    if (!showBanner) {
-      const consent = Cookies.get("cookie-consent");
-      if (consent) {
-        updateGoogleAnalyticsConsent(consent === "accepted");
-      }
-    }
-  }, [showBanner]);
-
   const updateGoogleAnalyticsConsent = (hasConsent: boolean) => {
     if (typeof window !== "undefined" && window.gtag) {
+      // Update consent according to Google's consent mode v2
       window.gtag("consent", "update", {
         ad_storage: hasConsent ? "granted" : "denied",
         ad_user_data: hasConsent ? "granted" : "denied",
@@ -61,18 +47,30 @@ export default function CookieConsentBanner() {
   };
 
   const handleAccept = () => {
+    // Save consent choice
     Cookies.set("cookie-consent", "accepted", {
       expires: 365,
       sameSite: "lax",
     });
+
+    // Update Google Analytics consent
+    updateGoogleAnalyticsConsent(true);
+
+    // Hide banner
     setShowBanner(false);
   };
 
   const handleDecline = () => {
+    // Save consent choice
     Cookies.set("cookie-consent", "declined", {
       expires: 365,
       sameSite: "lax",
     });
+
+    // Update Google Analytics consent (remains denied)
+    updateGoogleAnalyticsConsent(false);
+
+    // Hide banner
     setShowBanner(false);
   };
 
