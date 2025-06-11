@@ -19,25 +19,25 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center space-x-8">
           <Link
-            href="#features"
+            href="/#features"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Features
           </Link>
           <Link
-            href="#how-it-works"
+            href="/#how-it-works"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             How It Works
           </Link>
           <Link
-            href="#testimonials"
+            href="/#testimonials"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Testimonials
           </Link>
           <Link
-            href="#newsletter"
+            href="/#newsletter"
             className="text-sm font-medium hover:text-primary transition-colors"
           >
             Contact

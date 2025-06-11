@@ -45,7 +45,7 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="https://www.facebook.com/profile.php?id=61573430615677"
+                href="https://www.facebook.com/selp.life"
                 className="text-gray-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -60,19 +60,19 @@ export default function Footer() {
             <h3 className="font-semibold">Product</h3>
             <div className="space-y-2">
               <Link
-                href="#"
+                href="/#features"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Features
               </Link>
               <Link
-                href="#"
+                href="/#how-it-works"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 How It Works
               </Link>
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Privacy
@@ -90,25 +90,28 @@ export default function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="space-y-2">
               <Link
-                href="#"
+                href="/#hero"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 About
               </Link>
               <Link
-                href="#"
+                href="https://www.facebook.com/selp.life"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Blog
               </Link>
               <Link
-                href="#"
+                href="/#newsletter"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Careers
               </Link>
               <Link
-                href="#"
+                href="/#newsletter"
                 className="block text-gray-400 hover:text-white transition-colors"
               >
                 Press
@@ -141,7 +144,7 @@ export default function Footer() {
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
-              href="#"
+              href="/privacy-policy"
               className="text-gray-400 hover:text-white text-sm transition-colors"
             >
               Privacy Policy
