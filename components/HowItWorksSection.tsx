@@ -21,7 +21,7 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screen-2.png"
+                src="/screen-1.png"
                 alt="Step 1: Select body part"
                 width={250}
                 height={500}
@@ -31,17 +31,18 @@ export default function HowItWorksSection() {
               </div>
             </div>
             <h3 className="text-xl font-semibold text-foreground">
-              Select Body Part
+              Pick Pain Location
             </h3>
             <p className="text-muted-foreground">
-              Tap on the area of your body you want to assess
+              Tap and hold the painful area. <br /> Hold until the pain gauge
+              matches your pain (1-5).
             </p>
           </div>
 
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screen-3.png"
+                src="/screen-2.png"
                 alt="Step 2: Answer questions"
                 width={250}
                 height={500}
@@ -61,7 +62,7 @@ export default function HowItWorksSection() {
           <div className="text-center space-y-4">
             <div className="relative mx-auto w-fit">
               <Image
-                src="/screen-4.png"
+                src="/screen-3.png"
                 alt="Step 3: Get insights"
                 width={250}
                 height={500}
