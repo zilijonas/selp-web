@@ -44,6 +44,9 @@ export default function CookieConsentBanner() {
           ad_user_data: hasConsent ? "granted" : "denied",
           ad_personalization: hasConsent ? "granted" : "denied",
           analytics_storage: hasConsent ? "granted" : "denied",
+          functionality_storage: hasConsent ? "granted" : "denied",
+          personalization_storage: hasConsent ? "granted" : "denied",
+          // security_storage is always granted as it's essential for security
         });
 
         // Send page view if consent is granted
@@ -58,6 +61,8 @@ export default function CookieConsentBanner() {
         window.gtag("event", "consent_update", {
           consent_status: hasConsent ? "granted" : "denied",
           timestamp: new Date().toISOString(),
+          event_category: "Privacy",
+          event_label: "Cookie Consent Banner",
         });
       } catch (error) {
         console.warn("Failed to update Google consent:", error);
@@ -67,14 +72,23 @@ export default function CookieConsentBanner() {
 
   const handleAccept = () => {
     try {
-      // Update Google Analytics consent FIRST - this is critical
+      // Update Google Analytics consent FIRST - this is critical for advanced consent mode
       updateGoogleAnalyticsConsent(true);
 
-      // Then save consent choice
+      // Then save consent choice with enhanced cookie settings
       Cookies.set("cookie-consent", "accepted", {
         expires: 365,
         sameSite: "lax",
         secure: window.location.protocol === "https:",
+        path: "/",
+      });
+
+      // Store timestamp for consent record keeping
+      Cookies.set("cookie-consent-timestamp", new Date().toISOString(), {
+        expires: 365,
+        sameSite: "lax",
+        secure: window.location.protocol === "https:",
+        path: "/",
       });
 
       // Hide banner
@@ -89,11 +103,20 @@ export default function CookieConsentBanner() {
       // Update Google Analytics consent FIRST
       updateGoogleAnalyticsConsent(false);
 
-      // Save consent choice
+      // Save consent choice with enhanced cookie settings
       Cookies.set("cookie-consent", "declined", {
         expires: 365,
         sameSite: "lax",
         secure: window.location.protocol === "https:",
+        path: "/",
+      });
+
+      // Store timestamp for consent record keeping
+      Cookies.set("cookie-consent-timestamp", new Date().toISOString(), {
+        expires: 365,
+        sameSite: "lax",
+        secure: window.location.protocol === "https:",
+        path: "/",
       });
 
       // Hide banner
@@ -117,7 +140,8 @@ export default function CookieConsentBanner() {
         <p className="text-xs text-muted-foreground">
           We use cookies and similar technologies to improve your browsing
           experience, analyze website traffic, and provide personalized content.
-          By clicking "Accept All", you consent to our use of cookies.{" "}
+          By clicking "Accept All", you consent to our use of cookies for
+          analytics, advertising, and functionality purposes.{" "}
           <Link href="/privacy-policy" className="text-primary hover:underline">
             Learn more in our Privacy Policy
           </Link>
@@ -130,6 +154,7 @@ export default function CookieConsentBanner() {
           size="sm"
           onClick={handleDecline}
           className="text-xs"
+          aria-label="Decline all cookies"
         >
           Decline
         </Button>
@@ -137,6 +162,7 @@ export default function CookieConsentBanner() {
           size="sm"
           onClick={handleAccept}
           className="bg-primary hover:bg-primary/90 text-xs"
+          aria-label="Accept all cookies"
         >
           Accept All
         </Button>

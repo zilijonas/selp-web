@@ -96,8 +96,8 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <CookieConsentBanner />
+        <GoogleAnalytics gaId="G-Y019WXTZ3R" />
       </body>
-      <GoogleAnalytics gaId="G-Y019WXTZ3R" />
     </html>
   );
 }
