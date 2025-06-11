@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import ConsentManager from "@/components/ConsentManager";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -92,9 +93,10 @@ export default function RootLayout({
         <link rel="icon" href="/selp-icon.svg" type="image/svg+xml" />
       </head>
       <body className={inter.className}>
+        <ConsentManager />
         {children}
         <CookieConsentBanner />
-        <GoogleAnalytics gaId="G-Y019WXTZ3R" />
+        <GoogleAnalytics gaId="G-Y019WXTZ3R" dataLayerName="dataLayer" />
       </body>
     </html>
   );
