@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/selp-logo.svg"
                 alt="SELP"
@@ -23,7 +23,7 @@ export default function Footer() {
                 height={60}
                 className="h-14 w-auto"
               />
-            </div>
+            </Link>
             <p className="text-gray-400">
               SELP is your self-help health assistant. Tap the body part that
               hurts, answer tailored questions, and get a doctor-level analysis
