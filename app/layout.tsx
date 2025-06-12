@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ConsentManager from "@/components/ConsentManager";
-import FloatingNewsletterCTA from "@/app/_components/FloatingNewsletterCTA";
+import { FloatingNewsletterCTA } from "@/app/_components/FloatingNewsletterCTA";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });

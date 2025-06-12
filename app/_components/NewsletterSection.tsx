@@ -12,12 +12,17 @@ import {
 } from "lucide-react";
 import SectionContainer from "@/components/SectionContainer";
 import SectionHeader from "@/components/SectionHeader";
-import { useNewsletterSubscription } from "@/app/_hooks/useNewsletterSubscription";
+import { useNewsletterSubscription } from "../_hooks/useNewsletterSubscription";
 
 export default function NewsletterSection() {
-  const { isSubmitting, submitStatus, form, onSubmit } =
-    useNewsletterSubscription();
-  const { register, handleSubmit, errors } = form;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    isSubmitting,
+    submitStatus,
+    onSubmit,
+  } = useNewsletterSubscription();
 
   return (
     <SectionContainer id="newsletter" background="muted">
@@ -42,7 +47,7 @@ export default function NewsletterSection() {
                   required: "Email is required",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Please enter a valid email address",
+                    message: "Invalid email address",
                   },
                 })}
               />
@@ -63,7 +68,7 @@ export default function NewsletterSection() {
           </div>
 
           {/* Status Messages */}
-          {submitStatus.type && (
+          {submitStatus && (
             <div
               className={`flex items-center justify-center gap-2 text-sm ${
                 submitStatus.type === "success"
