@@ -2,6 +2,8 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ConsentManager from "@/components/ConsentManager";
 import "./globals.css";
@@ -95,7 +97,11 @@ export default function RootLayout({
         <ConsentManager />
       </head>
       <body className={inter.className}>
-        {children}
+        <div className="min-h-screen">
+          <Header />
+          {children}
+          <Footer />
+        </div>
         <CookieConsentBanner />
         <GoogleAnalytics gaId="G-Y019WXTZ3R" />
       </body>
