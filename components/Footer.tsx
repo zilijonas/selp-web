@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { resetCookieConsent } from "@/components/CookieConsentBanner";
 
 export default function Footer() {
   return (
@@ -161,6 +162,13 @@ export default function Footer() {
             © {new Date().getFullYear()} SELP. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
+            <button
+              onClick={resetCookieConsent}
+              className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
+              title="Change Cookie Preferences - Update Your Cookie Settings"
+            >
+              Cookie Preferences
+            </button>
             <Link
               href="/privacy-policy"
               className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"

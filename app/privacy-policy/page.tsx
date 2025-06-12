@@ -64,6 +64,23 @@ export default function PrivacyPolicy() {
         <ContentSection title="Your Consent Choices">
           <p>You have control over cookie usage on our website:</p>
           <List items={consentChoices} />
+          <div className="mt-4 p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-semibold mb-2">
+              Changing Your Cookie Preferences
+            </h4>
+            <p className="text-sm">
+              You can change your cookie preferences at any time by:
+            </p>
+            <ul className="list-disc pl-4 mt-2 text-sm space-y-1">
+              <li>Clicking the "Cookie Preferences" button in the footer</li>
+              <li>Clearing your browser cookies</li>
+              <li>Using your browser's privacy settings</li>
+            </ul>
+            <p className="text-sm mt-2">
+              When you change your preferences, you'll be shown the cookie
+              consent banner again where you can make a new choice.
+            </p>
+          </div>
         </ContentSection>
 
         <ContentSection title="Data Protection">
