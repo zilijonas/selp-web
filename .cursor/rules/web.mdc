@@ -1,0 +1,237 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rules for SELP - Next.js Project
+
+## Project Overview
+- **Framework**: Next.js 15.2.4 with App Router
+- **Language**: TypeScript 5
+- **UI Framework**: React 19
+- **UI Library**: Radix UI + shadcn/ui
+- **Styling**: Tailwind CSS with custom design system
+- **Forms**: React Hook Form + Zod validation
+- **Analytics**: @next/third-parties (Google Analytics)
+- **Deployment**: GitHub Pages (Static Export)
+- **Package Manager**: pnpm
+
+## File Structure
+```
+/
+├── app/                    # Next.js App Router pages
+├── components/             # React components
+│   └── ui/                # shadcn/ui components
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility functions and configs
+├── public/                # Static assets
+├── .cursor/               # Cursor configuration
+└── out/                   # GitHub Pages build output
+```
+
+## Path Aliases (from tsconfig.json)
+- `@/` → Root directory
+- `@/components` → `./components`
+- `@/lib` → `./lib`
+- `@/hooks` → `./hooks`
+- `@/components/ui` → `./components/ui`
+
+## Development Guidelines
+
+### Next.js Best Practices
+1. **App Router**: Use app directory structure, not pages router
+2. **Server Components**: Default to Server Components, use 'use client' only when necessary
+3. **Static Export**: Code must be compatible with `output: 'export'` in next.config.mjs
+4. **Image Optimization**: Use `unoptimized: true` for GitHub Pages compatibility
+5. **Metadata API**: Use Next.js 13+ metadata API for SEO
+6. **File Conventions**: Follow Next.js file naming (page.tsx, layout.tsx, not-found.tsx)
+
+### React Best Practices
+1. **Functional Components**: Use function declarations, not arrow functions for components
+2. **Hooks**: Follow rules of hooks, use custom hooks for reusable logic
+3. **Immutability**: Prefer `const` over `let`, keep data immutable
+4. **JSX**: Use semantic HTML and proper accessibility attributes
+
+### TypeScript Standards
+1. **Strict Mode**: Maintain strict TypeScript configuration
+2. **Type Safety**: Prefer explicit types over `any`
+3. **Interface vs Type**: Use `interface` for object shapes, `type` for unions/intersections
+4. **Component Props**: Always type component props with interfaces
+
+### Radix UI + shadcn/ui Standards
+1. **Component Composition**: Use Radix primitives through shadcn/ui wrappers
+2. **Customization**: Extend shadcn components using className and variants
+3. **Accessibility**: Leverage built-in accessibility features
+4. **Theming**: Use CSS variables defined in globals.css
+
+### Form Handling (React Hook Form + Zod)
+1. **Schema-First**: Define Zod schemas before forms
+2. **Type Safety**: Use Zod infer for TypeScript types
+3. **Validation**: Use @hookform/resolvers for Zod integration
+4. **Error Handling**: Implement proper error states and messages
+
+### Styling Guidelines
+1. **Tailwind CSS**: Use utility classes, avoid custom CSS when possible
+2. **Design System**: Follow custom CSS variables in globals.css
+3. **Responsive Design**: Mobile-first approach with responsive utilities
+4. **Dark Mode**: Support dark mode through CSS variables
+
+### File Naming Conventions
+1. **Components**: PascalCase (e.g., `MyComponent.tsx`)
+2. **Pages**: lowercase (e.g., `page.tsx`, `layout.tsx`)
+3. **Hooks**: camelCase with `use` prefix (e.g., `useMyHook.ts`)
+4. **Utils**: camelCase (e.g., `myUtility.ts`)
+5. **Types**: PascalCase with `.types.ts` suffix
+
+### Import Organization
+```typescript
+// 1. React and Next.js imports
+import React from 'react'
+import { NextPage } from 'next'
+import Image from 'next/image'
+
+// 2. Third-party libraries
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+
+// 3. Radix UI imports
+import * as Dialog from '@radix-ui/react-dialog'
+
+// 4. Internal components (shadcn/ui first, then custom)
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { CustomComponent } from '@/components/CustomComponent'
+
+// 5. Hooks and utilities
+import { useMyHook } from '@/hooks/useMyHook'
+import { cn } from '@/lib/utils'
+
+// 6. Types (if not co-located)
+import type { MyType } from './types'
+```
+
+### Component Structure Template
+```typescript
+// Component props interface
+interface MyComponentProps {
+  title: string
+  optional?: boolean
+  children?: React.ReactNode
+  className?: string
+}
+
+// Main component
+export default function MyComponent({ 
+  title, 
+  optional = false, 
+  children, 
+  className 
+}: MyComponentProps) {
+  // Hooks at the top
+  const [state, setState] = useState<string>('')
+  
+  // Event handlers
+  const handleClick = useCallback(() => {
+    // Handler logic
+  }, [])
+  
+  // Early returns
+  if (!title) return null
+  
+  // Main render
+  return (
+    <div className={cn('default-classes', className)}>
+      <h2>{title}</h2>
+      {optional && <span>Optional content</span>}
+      {children}
+    </div>
+  )
+}
+```
+
+### Form Schema Template
+```typescript
+// Zod schema
+const formSchema = z.object({
+  email: z.string().email('Invalid email address'),
+  password: z.string().min(8, 'Password must be at least 8 characters'),
+})
+
+// Infer TypeScript type
+type FormData = z.infer<typeof formSchema>
+
+// Component with form
+export default function MyForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  })
+  
+  const onSubmit = async (data: FormData) => {
+    // Form submission logic
+  }
+  
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {/* Form fields */}
+    </form>
+  )
+}
+```
+
+### GitHub Pages Deployment Considerations
+1. **Static Export**: All pages must be statically exportable
+2. **No Server Functions**: Avoid API routes, server actions
+3. **Asset Paths**: Use relative paths for assets
+4. **Base Path**: Configure if deploying to subdirectory
+
+### Analytics Integration
+1. **Google Analytics**: Use @next/third-parties/google for GA4
+2. **Consent Management**: Implement cookie consent before tracking
+3. **Privacy Compliance**: Follow GDPR/CCPA guidelines
+
+### Performance Guidelines
+1. **Code Splitting**: Leverage Next.js automatic code splitting
+2. **Image Optimization**: Use Next.js Image component
+3. **Bundle Analysis**: Monitor bundle size
+4. **Lazy Loading**: Use dynamic imports for heavy components
+
+### Accessibility Standards
+1. **Semantic HTML**: Use proper HTML elements
+2. **ARIA Labels**: Add descriptive labels for screen readers
+3. **Keyboard Navigation**: Ensure keyboard accessibility
+4. **Color Contrast**: Follow WCAG guidelines
+5. **Focus Management**: Implement proper focus handling
+
+### Error Handling
+1. **Error Boundaries**: Implement React error boundaries
+2. **User Feedback**: Provide clear error messages
+3. **Graceful Degradation**: Handle API failures gracefully
+4. **Loading States**: Show appropriate loading indicators
+
+### Testing Considerations
+1. **Component Testing**: Focus on user interactions
+2. **Accessibility Testing**: Test with screen readers
+3. **Responsive Testing**: Test across device sizes
+4. **Form Validation**: Test validation scenarios
+
+### Security Guidelines
+1. **Input Validation**: Validate all user inputs with Zod
+2. **XSS Prevention**: Sanitize user content
+3. **Content Security Policy**: Implement CSP headers
+4. **Dependency Updates**: Keep dependencies updated
+
+## Code Quality Rules
+1. Use TypeScript strict mode
+2. Follow ESLint and Prettier configurations
+3. Write meaningful commit messages
+4. Use semantic versioning
+5. Document complex logic with comments
+6. Prefer composition over inheritance
+7. Keep components small and focused
+8. Use meaningful variable and function names
+9. Implement proper error handling
+10. Follow the principle of least privilege 
