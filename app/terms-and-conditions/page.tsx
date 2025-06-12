@@ -21,7 +21,7 @@ export default function TermsAndConditions() {
 
           <div className="text-muted-foreground space-y-6">
             <p className="text-sm text-muted-foreground mb-6">
-              Last updated: {new Date().toLocaleDateString()}
+              Last updated: {new Date("2025-06-11").toLocaleDateString()}
             </p>
 
             <section>
