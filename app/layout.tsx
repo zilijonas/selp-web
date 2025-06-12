@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ConsentManager from "@/components/ConsentManager";
 import { FloatingNewsletterCTA } from "@/app/_components/FloatingNewsletterCTA";
+import { ExitIntentPopup } from "./_components/ExitIntentPopup";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -126,6 +127,7 @@ export default function RootLayout({
         </div>
         <CookieConsentBanner />
         <FloatingNewsletterCTA />
+        <ExitIntentPopup />
         <GoogleAnalytics gaId="G-Y019WXTZ3R" />
       </body>
     </html>
