@@ -10,77 +10,14 @@ import {
   Ban,
   LogOut,
 } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
 import SectionContainer from "@/components/SectionContainer";
 import SectionHeader from "@/components/SectionHeader";
-
-interface NewsletterFormData {
-  email: string;
-}
-
-interface ApiResponse {
-  success: boolean;
-  message: string;
-  data?: {
-    email: string;
-    subscribedAt: string;
-  };
-}
+import { useNewsletterSubscription } from "@/app/_hooks/useNewsletterSubscription";
 
 export default function NewsletterSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<NewsletterFormData>();
-
-  const onSubmit = async (data: NewsletterFormData) => {
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
-
-    try {
-      const response = await fetch(
-        "https://api.selp.life/newsletter/subscribe",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: data.email }),
-        }
-      );
-
-      const result: ApiResponse = await response.json();
-
-      if (response.ok && result.success) {
-        setSubmitStatus({
-          type: "success",
-          message: result.message || "Successfully subscribed to newsletter!",
-        });
-        reset(); // Clear the form
-      } else {
-        setSubmitStatus({
-          type: "error",
-          message: result.message || "Failed to subscribe. Please try again.",
-        });
-      }
-    } catch (error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Network error. Please check your connection and try again.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const { isSubmitting, submitStatus, form, onSubmit } =
+    useNewsletterSubscription();
+  const { register, handleSubmit, errors } = form;
 
   return (
     <SectionContainer id="newsletter" background="muted">
