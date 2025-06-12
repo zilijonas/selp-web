@@ -144,8 +144,16 @@ export default async function About() {
 
               <ContentSection title="Get in Touch" className="space-y-6">
                 <p className="text-lg text-muted-foreground max-w-2xl">
-                  Have questions about SELP or want to learn more about our
-                  mission? We'd love to hear from you.
+                  Ready to join the health revolution? Have questions about SELP
+                  or want to provide feedback? We're here to help.{" "}
+                  <a
+                    href="mailto:lijonas.it@gmail.com"
+                    className="text-primary hover:underline"
+                    title="Email SELP Team - Questions, Feedback, and General Inquiries"
+                  >
+                    Contact us today
+                  </a>{" "}
+                  and be part of the future of healthcare accessibility.
                 </p>
                 <div className="space-y-2">
                   <p className="text-muted-foreground">
@@ -153,6 +161,7 @@ export default async function About() {
                     <a
                       href="mailto:lijonas.it@gmail.com"
                       className="text-primary hover:underline"
+                      title="Email SELP Team - Direct Contact for Support and Inquiries"
                     >
                       lijonas.it@gmail.com
                     </a>
@@ -163,8 +172,12 @@ export default async function About() {
                 </div>
               </ContentSection>
 
-              <div className="pt-8 border-t">
-                <Link href="/" className="text-primary hover:underline">
+              <div className="mt-8 pt-6 border-t">
+                <Link
+                  href="/"
+                  className="text-primary hover:underline"
+                  title="Return to SELP Home - AI Health Assistant"
+                >
                   ← Back to Home
                 </Link>
               </div>

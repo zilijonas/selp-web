@@ -32,6 +32,7 @@ export default function StepCard({
           placeholder="blur"
           blurDataURL={placeholderSrc}
           className="w-full h-auto"
+          title={`Step ${stepNumber}: ${title} - ${imageAlt}`}
         />
         <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
           {stepNumber}

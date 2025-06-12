@@ -90,6 +90,7 @@ export default function PrivacyPolicy() {
             <a
               href="mailto:lijonas.it@gmail.com"
               className="text-primary hover:underline"
+              title="Email SELP Support - Privacy Policy Questions and Data Concerns"
             >
               lijonas.it@gmail.com
             </a>
@@ -98,7 +99,11 @@ export default function PrivacyPolicy() {
         </ContentSection>
 
         <div className="mt-8 pt-6 border-t">
-          <Link href="/" className="text-primary hover:underline">
+          <Link
+            href="/"
+            className="text-primary hover:underline"
+            title="Return to SELP Home - AI Health Assistant"
+          >
             ← Back to Home
           </Link>
         </div>

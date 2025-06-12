@@ -142,7 +142,11 @@ export default function CookieConsentBanner() {
           experience, analyze website traffic, and provide personalized content.
           By clicking "Accept All", you consent to our use of cookies for
           analytics, advertising, and functionality purposes.{" "}
-          <Link href="/privacy-policy" className="text-primary hover:underline">
+          <Link
+            href="/privacy-policy"
+            className="text-primary hover:underline"
+            title="SELP Privacy Policy - Learn About Our Cookie Usage and Data Protection"
+          >
             Learn more in our Privacy Policy
           </Link>
           .

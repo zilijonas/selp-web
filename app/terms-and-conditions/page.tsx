@@ -107,6 +107,7 @@ export default function TermsAndConditions() {
             <Link
               href="/privacy-policy"
               className="text-primary hover:underline"
+              title="SELP Privacy Policy - How We Protect Your Health Data"
             >
               Privacy Policy
             </Link>
@@ -165,11 +166,11 @@ export default function TermsAndConditions() {
 
         <ContentSection title="13. Contact Information">
           <p>
-            If you have any questions about these Terms and Conditions, please
-            contact us at{" "}
+            If you have any questions about these Terms, please contact us at{" "}
             <a
               href="mailto:lijonas.it@gmail.com"
               className="text-primary hover:underline"
+              title="Email SELP Support - Terms of Service Questions and Legal Concerns"
             >
               lijonas.it@gmail.com
             </a>
@@ -178,7 +179,11 @@ export default function TermsAndConditions() {
         </ContentSection>
 
         <div className="mt-8 pt-6 border-t">
-          <Link href="/" className="text-primary hover:underline">
+          <Link
+            href="/"
+            className="text-primary hover:underline"
+            title="Return to SELP Home - AI Health Assistant"
+          >
             ← Back to Home
           </Link>
         </div>

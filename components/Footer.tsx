@@ -15,13 +15,18 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link
+              href="/"
+              className="flex items-center space-x-3"
+              title="SELP - Home"
+            >
               <Image
                 src="/selp-logo.svg"
                 alt="SELP"
                 width={120}
                 height={60}
                 className="h-14 w-auto"
+                title="SELP - Your Personal Health Assistant Logo"
               />
             </Link>
             <p className="text-gray-400">
@@ -42,6 +47,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
+                title="Follow SELP on Instagram - Health Tips and Updates"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
@@ -51,6 +57,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
+                title="Follow SELP on Facebook - Health Community and Updates"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
@@ -63,24 +70,28 @@ export default function Footer() {
               <Link
                 href="/#features"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="SELP Features - AI Health Analysis and Privacy Protection"
               >
                 Features
               </Link>
               <Link
                 href="/#how-it-works"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="How SELP Works - Simple 3-Step Health Analysis Process"
               >
                 How It Works
               </Link>
               <Link
                 href="/privacy-policy"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="SELP Privacy Policy - How We Protect Your Health Data"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms-and-conditions"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="SELP Terms of Service - User Agreement and Conditions"
               >
                 Terms of Service
               </Link>
@@ -93,6 +104,7 @@ export default function Footer() {
               <Link
                 href="/about"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="About SELP - Our Mission to Democratize Healthcare"
               >
                 About
               </Link>
@@ -102,18 +114,21 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="SELP Blog - Latest Health Tech News and Updates"
               >
                 Blog
               </Link>
               <Link
                 href="/#newsletter"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="Careers at SELP - Join Our Health Tech Team"
               >
                 Careers
               </Link>
               <Link
                 href="/#newsletter"
                 className="block text-gray-400 hover:text-white transition-colors"
+                title="SELP Press Releases - Latest Company News"
               >
                 Press
               </Link>
@@ -125,7 +140,12 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-400">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:lijonas.it@gmail.com">lijonas.it@gmail.com</a>
+                <a
+                  href="mailto:lijonas.it@gmail.com"
+                  title="Email SELP Support - Get Help with Health Questions"
+                >
+                  lijonas.it@gmail.com
+                </a>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Phone className="h-4 w-4" />
@@ -147,18 +167,21 @@ export default function Footer() {
             <Link
               href="/privacy-policy"
               className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
+              title="SELP Privacy Policy - Data Protection and Cookie Usage"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-and-conditions"
               className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
+              title="SELP Terms of Service - Legal Agreement for App Usage"
             >
               Terms of Service
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-white text-sm transition-colors text-center sm:text-left"
+              title="SELP Medical Disclaimer - Important Health Information Notice"
             >
               Medical Disclaimer
             </Link>

@@ -50,6 +50,7 @@ export default function TestimonialCard({
             width={40}
             height={40}
             className="rounded-full"
+            title={`${authorName} - ${authorTitle} - SELP User Testimonial`}
           />
           <div>
             <p className="font-semibold text-foreground">{authorName}</p>

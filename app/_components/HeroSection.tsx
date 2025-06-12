@@ -44,7 +44,10 @@ export default function HeroSection() {
               className="text-lg px-8 bg-primary hover:bg-primary/90"
               asChild
             >
-              <Link href="#newsletter">
+              <Link
+                href="#newsletter"
+                title="Register for SELP Beta - Get Early Access to AI Health Assistant"
+              >
                 Register for Beta
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -72,6 +75,7 @@ export default function HeroSection() {
                 priority
                 placeholder="blur"
                 blurDataURL="/screens/screens-placeholder.webp"
+                title="SELP App Screenshots - Interactive Body Map for Health Analysis"
               />
             </div>
           </div>
