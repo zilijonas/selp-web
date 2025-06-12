@@ -109,14 +109,11 @@ export default function Footer() {
                 About
               </Link>
               <Link
-                href="https://www.facebook.com/selp.life"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
+                href="/faq"
                 className="block text-gray-400 hover:text-white transition-colors"
-                title="SELP Blog - Latest Health Tech News and Updates"
+                title="Frequently Asked Questions - SELP"
               >
-                Blog
+                FAQ
               </Link>
               <Link
                 href="/#newsletter"
