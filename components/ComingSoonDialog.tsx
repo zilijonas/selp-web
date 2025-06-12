@@ -18,6 +18,7 @@ interface ComingSoonDialogProps {
   description?: string;
   buttonClassName?: string;
   size?: "default" | "sm" | "lg" | "icon";
+  children?: React.ReactNode;
 }
 
 export default function ComingSoonDialog({
@@ -26,6 +27,7 @@ export default function ComingSoonDialog({
   description = "The SELP app is still being built! Please register for our newsletter to be the first to know when it's available for download.",
   buttonClassName,
   size = "lg",
+  children,
 }: ComingSoonDialogProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -40,6 +42,7 @@ export default function ComingSoonDialog({
           )}
           onClick={() => setIsDialogOpen(true)}
         >
+          {children}
           {triggerText}
         </Button>
       </DialogTrigger>
