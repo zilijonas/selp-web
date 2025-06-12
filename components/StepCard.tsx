@@ -45,7 +45,7 @@ export default function StepCard({
           </div>
         )}
       </div>
-      <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+      <h3 className="text-xl pt-4 font-semibold text-foreground">{title}</h3>
       <p
         className="text-muted-foreground"
         dangerouslySetInnerHTML={{ __html: description }}

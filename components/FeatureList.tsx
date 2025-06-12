@@ -28,7 +28,7 @@ export default function FeatureList({
 
   const orientationClasses = {
     horizontal:
-      "flex items-center justify-center lg:justify-start space-x-8 flex-wrap gap-y-2",
+      "flex items-center justify-center lg:justify-start gap-x-8 flex-wrap gap-y-2",
     vertical: "flex flex-col space-y-2",
   };
 

@@ -19,7 +19,7 @@ export default function CTASection() {
           <ComingSoonDialog triggerText="Download for Android" />
         </div>
         <p className="text-sm text-muted-foreground">
-          Privacy-first • Accessible anytime • Backed by AI, built for humans
+          Privacy-first • Free to use • Backed by AI, built for humans
         </p>
       </div>
     </SectionContainer>

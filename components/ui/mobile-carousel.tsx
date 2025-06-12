@@ -61,7 +61,7 @@ export default function MobileCarousel({
       </Carousel>
 
       {indicatorBubbles && (
-        <div className="flex justify-center space-x-2 mt-6">
+        <div className="flex justify-center space-x-2 mt-4">
           {children.map((_, index) => (
             <button
               key={index}

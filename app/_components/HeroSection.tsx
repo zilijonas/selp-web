@@ -10,7 +10,7 @@ export default function HeroSection() {
   const features = [
     "Privacy-first design",
     "AI-powered analysis",
-    "Accessible anytime",
+    "Free to use",
   ];
 
   return (
