@@ -79,7 +79,7 @@ export default function NewsletterSection() {
     <SectionContainer id="newsletter" background="muted">
       <div className="max-w-2xl mx-auto text-center space-y-8">
         <SectionHeader
-          badge="Download Selp Today"
+          badge="Join the Waitlist"
           title="Be the first to access your family doctor in your pocket"
           description="Find out when we launch our app and get early access to the beta. Subscribe to receive the latest health insights, app updates, and wellness tips directly in your inbox."
           maxWidth="2xl"
