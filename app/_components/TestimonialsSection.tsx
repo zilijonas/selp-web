@@ -9,21 +9,21 @@ export default function TestimonialsSection() {
       rating: 5,
       quote:
         "As an avid runner, SELP helped me identify what was causing my knee pain during training. I adjusted my routine based on the insights and avoided what could've been a serious injury!",
-      authorName: "Alex Rivera",
+      authorName: "Lukas M.",
       authorTitle: "Accountant",
     },
     {
       rating: 5,
       quote:
         "Standing all day at the salon was causing me serious back pain. SELP pinpointed the issue and suggested exercises that actually worked. Saved me unnecessary doctor visits!",
-      authorName: "Jamie Wilson",
+      authorName: "Samanta W.",
       authorTitle: "Hair Stylist",
     },
     {
       rating: 5,
       quote:
         "Between classes and staying active, I'm always worried about minor aches. SELP helps me understand what's serious and what's not. The 3D model makes it so easy to show exactly where I feel discomfort.",
-      authorName: "Taylor Kim",
+      authorName: "Tom K.",
       authorTitle: "Graduate Student",
     },
   ];
