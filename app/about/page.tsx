@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Learn about SELP's mission to make healthcare accessible, our privacy-first approach, and how we're revolutionizing self-health assessment with AI technology.",
 };
 
-export default function About() {
+export default async function About() {
   const features = [
     {
       icon: Target,
