@@ -20,6 +20,8 @@ export default function StepCard({
   placeholderSrc,
   className,
 }: StepCardProps) {
+  const isMobileStep = className?.includes("mobile-step");
+
   return (
     <div className={cn("text-center space-y-4", className)}>
       <div className="relative mx-auto w-fit">
@@ -31,12 +33,17 @@ export default function StepCard({
           loading="lazy"
           placeholder="blur"
           blurDataURL={placeholderSrc}
-          className="w-full h-auto"
+          className={cn(
+            "w-full h-auto",
+            isMobileStep ? "max-w-[250px] sm:max-w-[250px]" : "max-w-[250px]"
+          )}
           title={`Step ${stepNumber}: ${title} - ${imageAlt}`}
         />
-        <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
-          {stepNumber}
-        </div>
+        {!isMobileStep && (
+          <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+            {stepNumber}
+          </div>
+        )}
       </div>
       <h3 className="text-xl font-semibold text-foreground">{title}</h3>
       <p

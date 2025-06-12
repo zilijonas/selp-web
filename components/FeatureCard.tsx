@@ -20,7 +20,7 @@ export default function FeatureCard({
   return (
     <Card
       className={cn(
-        "border border-primary/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105",
+        "border border-primary/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 md:hover:scale-105 hover:scale-[1.02]",
         className
       )}
     >

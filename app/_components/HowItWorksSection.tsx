@@ -1,6 +1,7 @@
 import SectionContainer from "@/components/SectionContainer";
 import SectionHeader from "@/components/SectionHeader";
 import StepCard from "@/components/StepCard";
+import MobileCarousel from "@/components/ui/mobile-carousel";
 
 export default function HowItWorksSection() {
   const steps = [
@@ -38,7 +39,8 @@ export default function HowItWorksSection() {
         title="Three simple steps to better health insights"
       />
 
-      <div className="grid gap-12 md:grid-cols-3 items-start max-w-5xl mx-auto">
+      {/* Desktop Grid Layout */}
+      <div className="hidden md:grid gap-12 md:grid-cols-3 items-start max-w-5xl mx-auto">
         {steps.map((step) => (
           <StepCard
             key={step.stepNumber}
@@ -51,6 +53,22 @@ export default function HowItWorksSection() {
           />
         ))}
       </div>
+
+      {/* Mobile Carousel Layout */}
+      <MobileCarousel indicatorBubbles>
+        {steps.map((step) => (
+          <StepCard
+            key={step.stepNumber}
+            stepNumber={step.stepNumber}
+            title={step.title}
+            description={step.description}
+            imageSrc={step.imageSrc}
+            imageAlt={step.imageAlt}
+            placeholderSrc={step.placeholderSrc}
+            className="mobile-step"
+          />
+        ))}
+      </MobileCarousel>
     </SectionContainer>
   );
 }

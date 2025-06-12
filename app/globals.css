@@ -98,3 +98,45 @@
     background: transparent;
   }
 }
+
+/* Carousel optimizations for better hover effects and full-width display */
+@layer components {
+  .carousel-container {
+    /* Ensure proper overflow handling for hover effects */
+    @apply overflow-visible;
+  }
+  
+  .carousel-container .overflow-hidden {
+    /* Override the default overflow hidden on carousel content wrapper */
+    overflow: visible !important;
+  }
+  
+  .carousel-item-wrapper {
+    /* Prevent hover scaling from being cut off */
+    @apply transition-transform duration-300 py-2;
+    transform-origin: center;
+  }
+  
+  .carousel-item-wrapper:hover {
+    /* Slight scale with proper z-index for better visibility */
+    @apply scale-105 z-10 relative;
+  }
+  
+  /* Ensure carousel navigation buttons are properly positioned */
+  .carousel-nav-button {
+    @apply transition-all duration-200 z-20;
+    backdrop-filter: blur(8px);
+    background: rgba(26, 26, 51, 0.8);
+    border: 1px solid rgba(196, 229, 255, 0.12);
+  }
+  
+  .carousel-nav-button:hover {
+    background: rgba(196, 229, 255, 0.1);
+    border-color: rgba(196, 229, 255, 0.2);
+  }
+  
+  .carousel-nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
