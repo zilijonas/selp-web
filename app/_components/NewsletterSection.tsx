@@ -2,7 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  CheckCircle,
+  AlertCircle,
+  Shield,
+  Ban,
+  LogOut,
+} from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import SectionContainer from "@/components/SectionContainer";
@@ -136,6 +143,19 @@ export default function NewsletterSection() {
             </div>
           )}
         </form>
+
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Shield className="h-4 w-4 text-primary" />
+            <span>GDPR Compliant</span>
+            <span className="text-muted-foreground/50">•</span>
+            <Ban className="h-4 w-4 text-primary" />
+            <span>No Spam</span>
+            <span className="text-muted-foreground/50">•</span>
+            <LogOut className="h-4 w-4 text-primary" />
+            <span>Unsubscribe Anytime</span>
+          </div>
+        </div>
 
         <p className="text-sm text-muted-foreground">
           Privacy-first design. No spam, unsubscribe at any time. We respect

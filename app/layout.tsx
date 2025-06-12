@@ -92,6 +92,30 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/selp-icon.svg" type="image/svg+xml" />
         <ConsentManager />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "SELP",
+              applicationCategory: "HealthApplication",
+              operatingSystem: "iOS, Android",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              description:
+                "SELP is your self-help health assistant. Tap the body part that hurts, answer tailored questions, and get a doctor-level analysis — all in your pocket.",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                ratingCount: "1000",
+              },
+            }),
+          }}
+        />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen">

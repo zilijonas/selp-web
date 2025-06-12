@@ -34,6 +34,24 @@ export default function FeaturesSection() {
 
   return (
     <SectionContainer id="features" className="relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: features.map((feature, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "SoftwareApplication",
+                name: feature.title,
+                description: feature.description,
+              },
+            })),
+          }),
+        }}
+      />
       <SectionHeader
         badge="Features"
         title="Smart Self-Help for Your Body"
