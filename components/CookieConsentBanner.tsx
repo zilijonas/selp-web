@@ -200,12 +200,12 @@ export default function CookieConsentBanner() {
           </p>
         </div>
       </div>
-      <div className="flex gap-3 flex-wrap">
+      <div className="flex flex-col-reverse sm:flex-row gap-3">
         <Button
           variant="outline"
           size="sm"
           onClick={handleDecline}
-          className="text-xs"
+          className="text-xs w-full sm:w-auto"
           aria-label="Decline all cookies"
         >
           Decline
@@ -213,7 +213,7 @@ export default function CookieConsentBanner() {
         <Button
           size="sm"
           onClick={handleAccept}
-          className="bg-primary hover:bg-primary/90 text-xs"
+          className="bg-primary hover:bg-primary/90 text-xs w-full sm:w-auto"
           aria-label="Accept all cookies"
         >
           Accept All

@@ -25,7 +25,7 @@ export function FloatingNewsletterCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 bg-card border border-border p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm">
+    <div className="fixed bottom-4 left-4 right-4 bg-card border border-border p-4 rounded-lg shadow-lg max-w-sm z-50 backdrop-blur-sm sm:left-auto sm:right-4">
       <div className="flex justify-between items-start mb-2">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg bg-primary/20 flex items-center justify-center">
