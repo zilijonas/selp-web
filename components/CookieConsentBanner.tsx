@@ -205,7 +205,7 @@ export default function CookieConsentBanner() {
           variant="outline"
           size="sm"
           onClick={handleDecline}
-          className="text-xs w-full sm:w-auto"
+          className="text-xs w-full sm:w-auto py-6 md:py-2"
           aria-label="Decline all cookies"
         >
           Decline
@@ -213,7 +213,7 @@ export default function CookieConsentBanner() {
         <Button
           size="sm"
           onClick={handleAccept}
-          className="bg-primary hover:bg-primary/90 text-xs w-full sm:w-auto"
+          className="bg-primary hover:bg-primary/90 text-xs w-full sm:w-auto py-6 md:py-2"
           aria-label="Accept all cookies"
         >
           Accept All
