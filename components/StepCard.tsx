@@ -28,13 +28,13 @@ export default function StepCard({
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={250}
-          height={500}
+          width={681}
+          height={1376}
           loading="lazy"
           placeholder="blur"
           blurDataURL={placeholderSrc}
           className={cn(
-            "w-full h-auto",
+            "w-full h-auto min-h-[500px]",
             isMobileStep ? "max-w-[250px] sm:max-w-[250px]" : "max-w-[250px]"
           )}
           title={`Step ${stepNumber}: ${title} - ${imageAlt}`}

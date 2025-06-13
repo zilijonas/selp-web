@@ -9,6 +9,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['selp.life'],
   },
   trailingSlash: true,
   basePath: '',
