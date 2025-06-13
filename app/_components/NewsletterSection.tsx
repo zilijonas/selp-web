@@ -87,15 +87,21 @@ export default function NewsletterSection() {
         </form>
 
         <div className="flex flex-col items-center gap-4">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Shield className="h-4 w-4 text-primary" />
-            <span>GDPR Compliant</span>
-            <span className="text-muted-foreground/50">•</span>
-            <Ban className="h-4 w-4 text-primary" />
-            <span>No Spam</span>
-            <span className="text-muted-foreground/50">•</span>
-            <LogOut className="h-4 w-4 text-primary" />
-            <span>Unsubscribe Anytime</span>
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Shield className="h-4 w-4 text-primary" />
+              <span>GDPR Compliant</span>
+            </div>
+            <span className="hidden sm:inline text-muted-foreground/50">•</span>
+            <div className="flex items-center gap-2">
+              <Ban className="h-4 w-4 text-primary" />
+              <span>No Spam</span>
+            </div>
+            <span className="hidden sm:inline text-muted-foreground/50">•</span>
+            <div className="flex items-center gap-2">
+              <LogOut className="h-4 w-4 text-primary" />
+              <span>Unsubscribe Anytime</span>
+            </div>
           </div>
         </div>
 

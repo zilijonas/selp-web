@@ -4,6 +4,7 @@ import SectionContainer from "@/components/SectionContainer";
 import ComingSoonDialog from "@/components/ComingSoonDialog";
 import SectionHeader from "@/components/SectionHeader";
 import Image from "next/image";
+import { Shield, Gift, Brain } from "lucide-react";
 
 export default function CTASection() {
   return (
@@ -35,9 +36,20 @@ export default function CTASection() {
             />
           </ComingSoonDialog>
         </div>
-        <p className="text-sm text-muted-foreground">
-          Privacy-first • Free to use • Backed by AI, built for humans
-        </p>
+        <div className="text-sm text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center gap-2">
+            <Shield className="h-4 w-4 text-primary" />
+            <span>Privacy-first</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Gift className="h-4 w-4 text-primary" />
+            <span>Free to use</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Brain className="h-4 w-4 text-primary" />
+            <span>Backed by AI, built for humans</span>
+          </div>
+        </div>
       </div>
     </SectionContainer>
   );
